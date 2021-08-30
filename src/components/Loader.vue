@@ -1,10 +1,4 @@
 <template>
-  <div class="TitleFont">
-     {{msg}}
-  </div>
-    <div class="content">
-      <img src="https://picsum.photos/300/300/?random"/> <!-- for testing load -->
-    </div>
     <div class="loader-wrapper">
       <span class="loader"><span class="loader-inner"></span></span>
     </div>
@@ -12,7 +6,7 @@
 <script>
 import $ from 'jquery'
 export default {
-  name: 'Title',
+  name: 'Loader',
   props: {
     msg: String
   }
@@ -24,15 +18,6 @@ $(window).on("load",function(){
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.TitleFont {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 40px;
-  font-size: 40px;
-}
 .loader-wrapper {
   width: 100%;
   height: 100%;

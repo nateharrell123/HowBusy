@@ -1,14 +1,14 @@
 <template>
-  <Title msg="Welcome."/>
+  <Loader/>
 </template>
 
 <script>
-import Title from './components/Title.vue'
+import Loader from './components/Loader.vue'
 
 export default {
   name: 'App',
   components: {
-    Title
+    Loader
   }
 }
 </script>
