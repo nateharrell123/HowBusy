@@ -2,7 +2,7 @@
 <header>
     <div class="wrapper">
         <div class="logo">
-            <a href="#">Website Title</a>
+            <a href="#">HowBusy.com</a>
         </div>
         <nav>
             <a href="#">How it works</a>
