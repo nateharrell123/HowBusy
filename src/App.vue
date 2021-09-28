@@ -1,7 +1,9 @@
 <template>
   <Loader/>
-  <Header/>
-  <Search/>
+  <div class="document">
+    <Header/>
+  </div>
+    <Search/>
 </template>
 
 <script>
@@ -19,5 +21,9 @@ export default {
 </script>
 
 <style scoped>
+
+.document{
+  padding-bottom: 180px;
+}
 
 </style>
