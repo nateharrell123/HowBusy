@@ -1,11 +1,11 @@
 <template>
-<header>
+<header class="banner">
     <div class="wrapper">
         <div class="logo">
-            <a href="#">HowBusy.com</a>
+            <a href="#" class="HowBusyText">HowBusy.com</a>
         </div>
-        <nav>
-            <a href="#">How it works</a>
+        <nav class="nav"> 
+            <a href="#" class="HowItWorksText">How it works</a>
         </nav>
     </div>
 </header>
@@ -27,7 +27,7 @@ export default {
     float: left;
     line-height:100px;
 }
-.logo a{
+.HowBusyText{
     text-decoration: none;
     font-size: 30px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -37,7 +37,7 @@ export default {
 .wrapper {
   margin: 0 auto;
 }
-header{
+.banner{
     height:100px;
     background: #09A8D9;
     width: 100%;
@@ -47,11 +47,11 @@ header{
 body{
     text-align: center;
 }
-nav{
+.nav{
     float:right;
     line-height: 100px;
 }
-nav a{
+.HowItWorksText{
     text-decoration: none;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     letter-spacing:4px;
