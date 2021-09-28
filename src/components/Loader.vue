@@ -1,6 +1,9 @@
 <template>
     <div class="loader-wrapper">
-      <span class="loader"><span class="loader-inner"></span></span>
+      <span class="loader">
+        <span class="loader-inner">
+        </span>
+      </span>
     </div>
 </template>
 <script>
@@ -17,7 +20,7 @@ $(window).on("load",function(){
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
 .loader-wrapper {
   width: 100%;
   height: 100%;

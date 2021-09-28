@@ -23,7 +23,7 @@ export default {
   padding: 0;
 }
 .logo{
-    width: 30%;
+    width: 25%;
     float: left;
     line-height:100px;
 }
