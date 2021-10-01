@@ -20,7 +20,7 @@ $(window).on("load",function(){
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped>
 .loader-wrapper {
   width: 100%;
   height: 100%;
