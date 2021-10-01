@@ -38,7 +38,7 @@ export default {
 
 <style scoped>
 .push-right-lol{
-    
+    width:100%;
 }
 .content-table{
 
