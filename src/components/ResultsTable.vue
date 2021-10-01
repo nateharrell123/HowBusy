@@ -33,11 +33,13 @@
 <script>
 export default {
     name: 'ResultsTable'
+    // Try position:relative;
 }
 </script>
 
 <style scoped>
 .push-right-lol{
+    position:absolute; 
     width:100%;
 }
 .content-table{
@@ -46,6 +48,8 @@ export default {
     margin: 25px 0;
     font-size: 0.9em;
     min-width: 400px;
+    position:relative;
+    justify-content: middle;
 
     border-radius: 5px 5px 0 0;
     overflow:hidden;

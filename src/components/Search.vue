@@ -18,7 +18,6 @@ export default {
 <style scoped>
 .search{
   width: 25%;
-  float: left;
 }
 .box{
   font-size:20px;
