@@ -1,32 +1,32 @@
 <template>
-    <div>
-    <table class="content-table">
-        <thead>
-            <tr>
-                <th>Table Header 1</th>
-                <th>Table Header 2</th>
-                <th>Table Header 3</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class="push-right-lol">
+        <table class="content-table">
+            <thead>
                 <tr>
-                    <td>Data 1</td>
-                    <td>Data 2</td>
-                    <td>Data 3</td>
+                    <th>Table Header 1</th>
+                    <th>Table Header 2</th>
+                    <th>Table Header 3</th>
                 </tr>
-                <tr>
-                    <td> Row 2 </td>
-                    <td> Row 2 </td>
-                    <td> Row 3 </td>
-                </tr> 
-                <tr>
-                    <td> Row 3 </td>
-                    <td> Row 3 </td>
-                    <td> Row 3 </td>
-                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>Data 1</td>
+                        <td>Data 2</td>
+                        <td>Data 3</td>
+                    </tr>
+                    <tr>
+                        <td> Row 2 </td>
+                        <td> Row 2 </td>
+                        <td> Row 3 </td>
+                    </tr> 
+                    <tr>
+                        <td> Row 3 </td>
+                        <td> Row 3 </td>
+                        <td> Row 3 </td>
+                    </tr>
 
-        </tbody>
-    </table>
+            </tbody>
+        </table>
     </div>
 </template>
 
@@ -37,6 +37,9 @@ export default {
 </script>
 
 <style scoped>
+.push-right-lol{
+    
+}
 .content-table{
 
     border-collapse:collapse;
