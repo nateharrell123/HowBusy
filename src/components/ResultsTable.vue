@@ -39,8 +39,8 @@ export default {
 
 <style scoped>
 .push-right-lol{
-    position:absolute; 
-    width:100%;
+    position: relative;
+    left: 20px;
 }
 .content-table{
 
