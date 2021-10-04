@@ -1,5 +1,5 @@
 <template>
-    <div class="push-right-lol">
+    <div>
         <table class="content-table">
             <thead>
                 <tr>
@@ -32,16 +32,14 @@
 
 <script>
 export default {
-    name: 'ResultsTable'
-    // Try position:relative;
+    name: 'ResultsTable',
+    props : {
+
+    }
 }
 </script>
 
 <style scoped>
-.push-right-lol{
-    position: relative;
-    left: 20px;
-}
 .content-table{
 
     border-collapse:collapse;

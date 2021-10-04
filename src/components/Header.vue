@@ -26,6 +26,7 @@ export default {
     width: 25%;
     float: left;
     line-height:100px;
+    text-align:center;
 }
 .HowBusyText{
     text-decoration: none;
@@ -43,9 +44,6 @@ export default {
     width: 100%;
     z-index: 12;
     position:fixed;
-}
-body{
-    text-align: center;
 }
 .nav{
     float:right;
