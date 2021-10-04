@@ -10,9 +10,30 @@
                 </div>
             </div>
 
+            <div class="field">
+                <div class="two fields">
+                    <div class="field">
+                        <select>
+                            <option value="restaurant">Restaurant</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <select>
+                            <option value="5">5 KM</option>
+                            <option value="10">10 KM </option>
+                            <option value="15">15 KM </option>
+                            <option value="20">20 KM </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
         </form>
     </div>
-    <div class="ten wide column segment ui" ref="map"></div>
+
+     
+    <div class="ten wide column segment ui" ref="map"></div>  
 </div>
 </template>
 
