@@ -1,5 +1,5 @@
 <template>
-  <Loader />
+  <!-- <Loader /> -->
   <div class="headerBotSpace">
     <Header />
   </div>
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Loader from "./components/Loader.vue";
+//import Loader from "./components/Loader.vue";
 //import Search from "./components/Search.vue";
 import Header from "./components/Header.vue";
 import Tutorial from "./components/Tutorial.vue"
@@ -21,7 +21,7 @@ import ResultsTable from "./components/ResultsTable.vue";
 export default {
   name: "App",
   components: {
-    Loader,
+    //Loader,
     Header,
     //Search,
     ResultsTable,

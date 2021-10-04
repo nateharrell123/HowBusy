@@ -73,7 +73,7 @@ export default {
           );
       },
       findCloseByButtonPressed() {
-          const URL = `https://protected-anchorage-68389.herokuapp.com/
+          const URL = `
           https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${
               this.lat}
               ,${this.long}
@@ -84,7 +84,7 @@ export default {
           .get(URL)
           .then(response => {
               console.log(response.data);
-          });
+          })
       }
   }
 }
