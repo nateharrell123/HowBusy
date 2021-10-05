@@ -64,13 +64,13 @@ export default {
 
   methods: {
     locatorButtonPressed() {
-
       navigator.geolocation.getCurrentPosition(
-        (position) => {
+        position => {
           this.lat = position.coords.latitude;
           this.long = position.coords.longitude;
         }
-      );
+      )
+
     },
     findCloseByButtonPressed() {
       const URL = `
