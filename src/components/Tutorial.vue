@@ -7,9 +7,8 @@
             <input
               type="text"
               placeholder="Enter your address"
-              v-model="coordinates"
             />
-            <button @click="locatorButtonPressed">Click me!</button>
+            <button>Click me!</button>
           </div>
         </div>
 
@@ -54,37 +53,6 @@ export default {
       lat: 0,
       long: 0,
     };
-  },
-
-  computed: {
-    coordinates() {
-      return `${this.lat}, ${this.long}`;
-    },
-  },
-
-  methods: {
-    locatorButtonPressed() {
-      navigator.geolocation.getCurrentPosition(
-        position => {
-          this.lat = position.coords.latitude;
-          this.long = position.coords.longitude;
-        }
-      )
-
-    },
-    findCloseByButtonPressed() {
-      const URL = `
-          https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${
-            this.lat
-          }
-              ,${this.long}
-              &type=${this.type}
-              &radius=${this.radius * 1000}
-              &key=AIzaSyDASvg4ATeMQcAsocmem5kFdTMDw_NSJwo`;
-      axios.get(URL).then((response) => {
-        console.log(response.data);
-      });
-    },
   },
 };
 </script>
