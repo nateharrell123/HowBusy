@@ -6,9 +6,10 @@
 </template>
 
 <script>
-export default {
-    name: "Map",
 
+export default {
+
+    name: "Map",
     data() {
         return {
             coordinates: {
@@ -16,13 +17,6 @@ export default {
                 lng: 0
             }
         }
-    },
-
-    created() {
-        this.$getLocation({})
-            .then(coordinates => (
-                this.coordinates = coordinates
-            ))
     }
 }
 </script>
