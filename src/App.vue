@@ -1,31 +1,29 @@
 <template>
-  <!-- <Loader /> -->
+<Map/>
+</template>
+
+<!--<template>
   <div class="headerBotSpace">
     <Header />
-  </div>
+      </div>
   <div class="push-right-lol">
     <div class="searchBotSpace">
-      <!-- <Search/> -->
-    </div> 
-    <Map/>
+    </div>
+    <Map/> 
     <ResultsTable/>
   </div>
 </template>
-
+-->
 <script>
 //import Loader from "./components/Loader.vue";
 //import Search from "./components/Search.vue";
-import Header from "./components/Header.vue";
-import Tutorial from "./components/Map.vue"
-import ResultsTable from "./components/ResultsTable.vue";
+import Map from "./components/Map.vue"
+//import Header from "./components/Header.vue";
+//import ResultsTable from "./components/ResultsTable.vue";
 export default {
   name: "App",
   components: {
-    //Loader,
-    Header,
-    //Search,
-    ResultsTable,
-    Tutorial
+    Map
   },
 };
 </script>
