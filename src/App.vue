@@ -6,8 +6,8 @@
   <div class="push-right-lol">
     <div class="searchBotSpace">
       <!-- <Search/> -->
-      <Tutorial/>
     </div> 
+    <Map/>
     <ResultsTable/>
   </div>
 </template>
@@ -16,7 +16,7 @@
 //import Loader from "./components/Loader.vue";
 //import Search from "./components/Search.vue";
 import Header from "./components/Header.vue";
-import Tutorial from "./components/Tutorial.vue"
+import Tutorial from "./components/Map.vue"
 import ResultsTable from "./components/ResultsTable.vue";
 export default {
   name: "App",
