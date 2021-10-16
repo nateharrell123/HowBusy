@@ -38,7 +38,14 @@ export default {
 
             var config = {
             method: 'get',
-            url: 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522%2C151.1957362&radius=1500&type=restaurant&keyword=cruise&key=AIzaSyDASvg4ATeMQcAsocmem5kFdTMDw_NSJwo',
+            url: `
+            https://cors-anywhere.herokuapp.com/
+            https://maps.googleapis.com/maps/api/place/nearbysearch
+            /json?
+            location=${this.lat},${this.lng}
+            &radius=1500
+            &type=restaurant
+            &key=AIzaSyDASvg4ATeMQcAsocmem5kFdTMDw_NSJwo`,
             headers: { }
             };
 
