@@ -10,6 +10,7 @@
 
 
 export default {
+
     name: "Map",
     data() {
         return {
@@ -22,11 +23,17 @@ export default {
 
     methods: {
         clickme(){
-            console.log(this.$geolocation.coords)
+            this.$getLocation()
+                .then((coordinates) => {
+                    console.log(coordinates)
+                    this.coordinates = {
+                        lat: coordinates.lat,
+                        lng: coordinates.lng
+                    }
+                })
+                .catch(error => alert(error));
         }
     }
-
-
 }
 </script>
 
