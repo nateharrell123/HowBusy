@@ -12,8 +12,8 @@
     </select>
 
     <ul>
-      <li v-for="place in places" :key="place.id">
-        {{ place}}
+      <li v-for="place in this.places" :key="place.id">
+        {{ place.name }}
       </li>
     </ul>
   </div>
@@ -21,14 +21,19 @@
 
 <script>
 export default {
-  name: "Search",
-  coordinates: {
-    lat: 0,
-    lng: 0
+  data() {
+    return {
+
+      name: "Search",
+      coordinates: {
+        lat: 0,
+        lng: 0
+      },
+      type: "",
+      radius : 0,
+      places: {},
+    }
   },
-  type: "",
-  radius : 0,
-  places: [],
 
   mounted : function (){
     this.grabLocation()
@@ -55,10 +60,12 @@ export default {
         method: "get",
         url: `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${this.coordinates.lat},${this.coordinates.lng}&radius=${this.radius}&key=AIzaSyDASvg4ATeMQcAsocmem5kFdTMDw_NSJwo`,
       };
+      let self = this; // strange :P
       axios(config)
         .then(function (response) {
           console.log(JSON.stringify(response.data));
-          this.places = response.data.results;
+          console.log(typeof(response.data))
+          self.places = JSON.stringify(response.data);
         })
         .catch(function (error) {
           console.log(error);
