@@ -13,7 +13,7 @@
     <div>
       <ul>
         <li v-for="place in this.places" :key="place.id">
-          {{ place.vicinity }}
+          {{ place.name }}
           
         </li>
       </ul>
@@ -33,7 +33,7 @@ export default {
       },
       type: "",
       radius : 0,
-      places: {},
+      places: [],
     }
   },
 
@@ -67,7 +67,7 @@ export default {
         .then(function (response) {
           console.log(JSON.stringify(response.data));
 
-          self.places = JSON.stringify(response.data);
+          self.places = response.data.results;
         })
         .catch(function (error) {
           console.log(error);
