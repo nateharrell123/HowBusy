@@ -35,18 +35,21 @@ export default {
             lat: coordinates.lat,
             lng: coordinates.lng,
           };
-      console.log(coordinates);
+      //console.log(this.coordinates.lat);
         })
         .catch((error) => alert(error));
     },
     findNearby() {
       var axios = require("axios");
-      console.log(this.type)
       //url: 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522%2C151.1957362&radius=1500&type=restaurant&keyword=cruise&key=YOUR_API_KEY',
       console.log(this.coordinates.lat, this.coordinates.lng)
       var config = {
         method: "get",
-        url: `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${this.coordinates.lat},${this.coordinates.lng}&key=AIzaSyDASvg4ATeMQcAsocmem5kFdTMDw_NSJwo`,
+        //url: `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${this.coordinates.lat},${this.coordinates.lng}&key=AIzaSyDASvg4ATeMQcAsocmem5kFdTMDw_NSJwo`,
+        url: `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=39.1906391,-96.5804939&radius=1500&key=AIzaSyDASvg4ATeMQcAsocmem5kFdTMDw_NSJwo`,
+
+        //url: 'https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522%2C151.1957362&radius=1500&type=restaurant&keyword=cruise&key=YOUR_API_KEY',
+
         /*url: `https://cors-anywhere.herokuapp.com
         /https://maps.googleapis.com/maps/api/place/nearbysearch/json?
         location=-33.8670522%2C151.1957362&radius=1500
