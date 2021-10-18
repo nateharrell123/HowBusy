@@ -5,7 +5,6 @@
   </div>
   <div class="searchBotSpace">
     <Search/>
-    <Map/>
   </div>
     <ResultsTable/>
 </template>
@@ -13,7 +12,6 @@
 <script>
 import Loader from "./components/Loader.vue";
 import Search from "./components/Search.vue";
-import  Map  from "./components/Map.vue"
 import Header from "./components/Header.vue";
 import ResultsTable from "./components/ResultsTable.vue";
 export default {
@@ -22,8 +20,7 @@ export default {
     Loader,
     Header,
     Search,
-    ResultsTable,
-    Map
+    ResultsTable
   },
 };
 </script>

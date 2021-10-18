@@ -34,7 +34,7 @@
 export default {
     name: 'ResultsTable',
     props : {
-
+        
     }
 }
 </script>
