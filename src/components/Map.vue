@@ -17,7 +17,8 @@ export default {
             coordinates: {
                 lat: 0,
                 lng: 0
-            }
+            },
+            type: ""
         }
     },
 
@@ -38,14 +39,7 @@ export default {
 
             var config = {
             method: 'get',
-            url: `
-            https://cors-anywhere.herokuapp.com/
-            https://maps.googleapis.com/maps/api/place/nearbysearch
-            /json?
-            location=${this.lat},${this.lng}
-            &radius=1500
-            &type=restaurant
-            &key=AIzaSyDASvg4ATeMQcAsocmem5kFdTMDw_NSJwo`,
+            url: `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${this.lat},${this.lng}&radius=1500&type=${this.type}&key=AIzaSyDASvg4ATeMQcAsocmem5kFdTMDw_NSJwo`,
             headers: { }
             };
 
