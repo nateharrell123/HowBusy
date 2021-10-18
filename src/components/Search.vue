@@ -1,6 +1,7 @@
 <template>
   <div class="search">
     <input
+      v-model="radius"
       v-on:keyup.enter="findNearby"
       class="box"
       placeholder="Enter a radius (mi.):"
@@ -9,6 +10,12 @@
       <option value="restaurant"> Restaurant </option>
       <option value="Bar"> Bar </option>
     </select>
+
+    <ul>
+      <li v-for="place in places" :key="place.id">
+        {{ place}}
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -20,6 +27,8 @@ export default {
     lng: 0
   },
   type: "",
+  radius : 0,
+  places: [],
 
   mounted : function (){
     this.grabLocation()
@@ -42,26 +51,14 @@ export default {
     findNearby() {
       var axios = require("axios");
       //url: 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522%2C151.1957362&radius=1500&type=restaurant&keyword=cruise&key=YOUR_API_KEY',
-      console.log(this.coordinates.lat, this.coordinates.lng)
       var config = {
         method: "get",
-        //url: `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${this.coordinates.lat},${this.coordinates.lng}&key=AIzaSyDASvg4ATeMQcAsocmem5kFdTMDw_NSJwo`,
-        url: `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=39.1906391,-96.5804939&radius=1500&key=AIzaSyDASvg4ATeMQcAsocmem5kFdTMDw_NSJwo`,
-
-        //url: 'https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522%2C151.1957362&radius=1500&type=restaurant&keyword=cruise&key=YOUR_API_KEY',
-
-        /*url: `https://cors-anywhere.herokuapp.com
-        /https://maps.googleapis.com/maps/api/place/nearbysearch/json?
-        location=-33.8670522%2C151.1957362&radius=1500
-        &type=restaurant
-        &keyword=cruise
-        &key=AIzaSyDASvg4ATeMQcAsocmem5kFdTMDw_NSJwo`,
-        headers: {},
-        */
+        url: `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${this.coordinates.lat},${this.coordinates.lng}&radius=${this.radius}&key=AIzaSyDASvg4ATeMQcAsocmem5kFdTMDw_NSJwo`,
       };
       axios(config)
         .then(function (response) {
           console.log(JSON.stringify(response.data));
+          this.places = response.data.results;
         })
         .catch(function (error) {
           console.log(error);
