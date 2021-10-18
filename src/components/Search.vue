@@ -10,12 +10,14 @@
       <option value="restaurant"> Restaurant </option>
       <option value="Bar"> Bar </option>
     </select>
-
-    <ul>
-      <li v-for="place in this.places" :key="place.id">
-        {{ place.name }}
-      </li>
-    </ul>
+    <div>
+      <ul>
+        <li v-for="place in this.places" :key="place.id">
+          {{ place.vicinity }}
+          
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -64,7 +66,7 @@ export default {
       axios(config)
         .then(function (response) {
           console.log(JSON.stringify(response.data));
-          console.log(typeof(response.data))
+
           self.places = JSON.stringify(response.data);
         })
         .catch(function (error) {
