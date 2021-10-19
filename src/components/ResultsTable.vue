@@ -9,8 +9,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>{{this.Name}}</td>
+        <tr v-for="place in Results" :key="place.id">
+          <td>{{place.Name}}</td>
           <td>Data 2</td>
           <td>Data 3</td>
         </tr>
@@ -22,7 +22,7 @@
         <tr>
           <td>Row 3</td>
           <td>Row 3</td>
-          <td>Row 3</td>
+          <td>Row 3</td> 
         </tr>
       </tbody>
     </table>
@@ -35,8 +35,8 @@ export default {
     return {
       name: "ResultsTable",
       props: {
-          Name : {
-              type: String,
+          Results : {
+              type: Array,
               default : "No entry"
           }
       },

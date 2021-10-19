@@ -17,7 +17,9 @@
         </li>
       </ul>
     </div>
-    <ResultsTable/>
+    <ResultsTable
+    :Results="places"
+    />
   </div>
 </template>
 
