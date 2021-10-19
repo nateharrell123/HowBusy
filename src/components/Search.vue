@@ -1,15 +1,19 @@
 <template>
   <div class="search">
-    <input
-      v-model="radius"
-      v-on:keyup.enter="findNearby"
-      class="box"
-      placeholder="Enter a radius (mi.):"
-    />
-    <select v-model="type">
-      <option value="restaurant"> Restaurant </option>
-      <option value="Bar"> Bar </option>
-    </select>
+    <div class="inputclass">
+      <input
+        v-model="radius"
+        v-on:keyup.enter="findNearby"
+        class="box"
+        placeholder="Enter a radius (mi.):"
+      />
+    </div>
+    <div class="selectclass">
+      <select v-model="type" class="dropdown">
+        <option value="restaurant"> Restaurant </option>
+        <option value="Bar"> Bar </option>
+      </select>
+    </div>
     <div>
       <ResultsTable
       :SearchResults="places"
@@ -30,7 +34,7 @@ export default {
         lng: 0
       },
       type: "",
-      radius : 0,
+      radius : null,
       places: [],
     }
   },
@@ -81,7 +85,25 @@ export default {
 
 <style scoped>
 .search {
-  width: 25%;
+  width: 100%;
+}
+select {
+    border:1px solid #ccc;
+    vertical-align:top;
+}
+.inputclass {
+  display:inline-block;
+}
+.selectclass {
+  display:inline;
+  padding-left:70px;
+  width:300px;
+}
+input, select{
+  height : 30px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 .box {
   font-size: 20px;

@@ -3,7 +3,7 @@
   <div class="headerBotSpace">
     <Header/>
   </div>
-  <div class="searchBotSpace">
+  <div class="searchBotSpace push-right-lol">
     <Search/>
   </div>
     <!--<ResultsTable/> -->
