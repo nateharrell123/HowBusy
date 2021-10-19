@@ -23,7 +23,7 @@ import ResultsTable from "/Users/nateharrell/Documents/csproject/src/components/
 export default {
   data() {
     return {
-
+      //
       name: "Search",
       coordinates: {
         lat: 0,
