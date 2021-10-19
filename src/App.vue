@@ -6,21 +6,21 @@
   <div class="searchBotSpace">
     <Search/>
   </div>
-    <ResultsTable/>
+    <!--<ResultsTable/> -->
 </template>
 
 <script>
 import Loader from "./components/Loader.vue";
 import Search from "./components/Search.vue";
 import Header from "./components/Header.vue";
-import ResultsTable from "./components/ResultsTable.vue";
+//import ResultsTable from "./components/ResultsTable.vue";
 export default {
   name: "App",
   components: {
     Loader,
     Header,
     Search,
-    ResultsTable
+    //ResultsTable
   },
 };
 </script>

@@ -14,14 +14,15 @@
       <ul>
         <li v-for="place in this.places" :key="place.id">
           {{ place.name }}
-          
         </li>
       </ul>
     </div>
+    <ResultsTable/>
   </div>
 </template>
 
 <script>
+import ResultsTable from "/Users/nateharrell/Documents/csproject/src/components/ResultsTable.vue";
 export default {
   data() {
     return {
@@ -35,6 +36,10 @@ export default {
       radius : 0,
       places: [],
     }
+  },
+
+  components : {
+    ResultsTable
   },
 
   mounted : function (){
