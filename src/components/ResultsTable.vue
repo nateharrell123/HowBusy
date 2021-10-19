@@ -10,19 +10,9 @@
       </thead>
       <tbody>
         <tr v-for="place in Results" :key="place.id">
-          <td>{{place.Name}}</td>
-          <td>Data 2</td>
+          <td>{{place.name}}</td>
+          <td>Data 2</td> 
           <td>Data 3</td>
-        </tr>
-        <tr>
-          <td>Row 2</td>
-          <td>Row 2</td>
-          <td>Row 3</td>
-        </tr>
-        <tr>
-          <td>Row 3</td>
-          <td>Row 3</td>
-          <td>Row 3</td> 
         </tr>
       </tbody>
     </table>
@@ -35,10 +25,7 @@ export default {
     return {
       name: "ResultsTable",
       props: {
-          Results : {
-              type: Array,
-              default : "No entry"
-          }
+          Results: Array
       },
       mounted : function (){
         this.setText()

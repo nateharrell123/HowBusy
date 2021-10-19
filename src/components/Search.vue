@@ -11,15 +11,10 @@
       <option value="Bar"> Bar </option>
     </select>
     <div>
-      <ul>
-        <li v-for="place in this.places" :key="place.id">
-          {{ place.name }}
-        </li>
-      </ul>
+      <ResultsTable
+      :Results="places"
+      />
     </div>
-    <ResultsTable
-    :Results="places"
-    />
   </div>
 </template>
 
