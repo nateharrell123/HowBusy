@@ -12,7 +12,7 @@
     </select>
     <div>
       <ResultsTable
-      :Results="places"
+      :SearchResults="places"
       />
     </div>
   </div>

@@ -9,7 +9,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="place in Results" :key="place.id">
+        <tr v-for="place in SearchResults" :key="place.id">
           <td>{{place.name}}</td>
           <td>Data 2</td> 
           <td>Data 3</td>
@@ -25,7 +25,7 @@ export default {
     return {
       name: "ResultsTable",
       props: {
-          Results: Array
+          SearchResults: Array
       },
       mounted : function (){
         this.setText()
