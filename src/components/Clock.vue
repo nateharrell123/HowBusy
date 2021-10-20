@@ -1,4 +1,5 @@
 <template>
+
 <div class="clock">
 	<div class="top"></div>
 	<div class="right"></div>
@@ -9,6 +10,15 @@
 	<div class="hour"></div>
 	<div class="minute"></div>
 	<div class="second"></div>
+
+    <div class="title">
+        <span>How </span>
+        <span class="logo_alt"> Busy </span>
+    </div>
+
+    <div class="subtitle">
+        Find how busy nearby shops, restaurants etc. are
+    </div>
 </div> 
 </template>
 <script>
@@ -18,13 +28,46 @@ export default {
 </script>
 
 <style scoped>
+.logo_alt{
+    color:#22702A;
+}
+.subtitle{
+    text-align: center;
+    white-space: nowrap;
+    font-weight : 600;
+    letter-spacing:4px;
+    line-height:100px;
+    text-transform: lowercase;
+    position: absolute;
+    margin-top:330px;
+    
+    font-size:40px;
+	width: 200px;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+    font-weight: 200;
+    color: #777;
+}
+.title{
+    text-align: center;
+    white-space: nowrap;
+    font-weight : 600;
+    letter-spacing:4px;
+    line-height:100px;
+    text-transform: uppercase;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+    color:#212121;
+    position: absolute;
+    margin-top:250px;
+    font-size:40px;
+	width: 200px;
+}
 .clock {
 	position: absolute;
 	height: 200px;
 	width: 200px;
 	background-color: #fff;
 	border-radius: 100%;
-	border: 10px solid #34626c;
+	border: 10px solid #005F70;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -141,7 +184,7 @@ export default {
 .clock .second:before {
 	position: absolute;
 	content: "";
-	background-color: #fd1111;
+	background-color: red;
 	height: 45px;
 	width: 2px;
 	top: 45px;
