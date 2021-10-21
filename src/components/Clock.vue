@@ -59,7 +59,7 @@ export default {
 	
 }
 .clock {
-	position: fixed;
+	position: absolute;
 	top: 15%;
 	left: 50%;
 	margin-top: -50px;

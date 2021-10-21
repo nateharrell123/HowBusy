@@ -92,6 +92,8 @@ export default {
   font-weight: 300;
   box-sizing: border-box;
   letter-spacing: 2px;
+  color: rgba(0, 0, 0, 0.5);
+
 }
 
 .results{
