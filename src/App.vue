@@ -2,9 +2,7 @@
   <div class="clock">
     <Clock/>
   </div>
-  <div>
     <Search/>
-  </div>
 </template>
 
 <script>

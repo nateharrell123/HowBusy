@@ -1,5 +1,4 @@
 <template>
-  <div class="search">
     <div class="inputclass">
       <!-- <input
         v-model="radius"
@@ -21,15 +20,16 @@
       </select> -->
     </div>
     <div>
-      <!-- <ResultsTable
-      :SearchResults="places"
-      /> -->
+      <div class="results">
+        <ResultsTable
+        :SearchResults="places"
+        />
+      </div>
     </div>
-  </div>
 </template>
 
 <script>
-//import ResultsTable from "/Users/nateharrell/Documents/csproject/src/components/ResultsTable.vue";
+import ResultsTable from "/Users/nateharrell/Documents/csproject/src/components/ResultsTable.vue";
 export default {
   data() {
     return {
@@ -46,7 +46,7 @@ export default {
   },
 
   components : {
-    //ResultsTable
+    ResultsTable
   },
 
   mounted : function (){
@@ -91,16 +91,22 @@ export default {
 
 <style scoped>
 .searchInput{
+  display:block;
+  margin:auto;
+  margin-top:10px;
   font-size: 2rem;
   padding: 15px 45px 15px 30px;
   font-family: Source Code Pro,SF Mono,Consolas,Liberation Mono,Menlo,Courier,monospace;
   font-weight: 300;
-  width: 100%;
   box-sizing: border-box;
   letter-spacing: -.7px;
 }
 .inputclass {
-  display:inline-block;
+}
+.results{
+  display:block;
+  margin:auto;
+  margin-top:10px;
 }
 .box {
   font-size: 20px;
