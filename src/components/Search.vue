@@ -1,30 +1,22 @@
 <template>
-    <div class="inputclass">
-      <!-- <input
-        v-model="radius"
-        v-on:keyup.enter="findNearby"
-        class="box"
-        placeholder="Enter a radius (mi.):"
-      /> -->
+    <div class="inputclass" >
     <input
     class="searchInput" 
-    placeholder="Enter a radius (Mi.)"
+    placeholder="Enter a radius (mi.):"
     v-model="radius"
     v-on:keyup.enter="findNearby"
     >
+    <div class="searchIcon">
+    <svg xmlns="http://www.w3.org/2000/svg">
+      <!-- more tags here -->
+    </svg>
     </div>
-    <div class="selectclass">
-      <!-- <select v-model="type" class="dropdown">
-        <option value="restaurant"> Restaurant </option>
-        <option value="Bar"> Bar </option>
-      </select> -->
     </div>
-    <div>
-      <div class="results">
-        <ResultsTable
-        :SearchResults="places"
-        />
-      </div>
+
+    <div class="results">
+      <ResultsTable
+      :SearchResults="places"
+      />
     </div>
 </template>
 
@@ -96,18 +88,17 @@ export default {
   margin-top:10px;
   font-size: 2rem;
   padding: 15px 45px 15px 30px;
-  font-family: Source Code Pro,SF Mono,Consolas,Liberation Mono,Menlo,Courier,monospace;
+	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
   font-weight: 300;
   box-sizing: border-box;
-  letter-spacing: -.7px;
+  letter-spacing: 2px;
 }
-.inputclass {
-}
+
 .results{
-  display:block;
-  margin:auto;
-  margin-top:10px;
+  margin: auto;
+  width: 25%;
 }
+
 .box {
   font-size: 20px;
 }
