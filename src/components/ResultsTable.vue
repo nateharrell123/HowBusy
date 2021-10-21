@@ -21,12 +21,12 @@
 
 <script>
 export default {
+    props: {
+        SearchResults: Array
+    },
   data() {
     return {
       name: "ResultsTable",
-      props: {
-          SearchResults: Array
-      },
       mounted : function (){
         this.setText()
       },

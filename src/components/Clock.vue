@@ -10,16 +10,15 @@
 	<div class="hour"></div>
 	<div class="minute"></div>
 	<div class="second"></div>
+</div> 
 
     <div class="title">
-        <span>How </span>
-        <span class="logo_alt"> Busy </span>
+        <span>How</span>
+        <span class="logo_alt">Busy</span>
     </div>
-
     <div class="subtitle">
-        Find how busy nearby shops, restaurants etc. are
+        Find out how busy local establishments are.
     </div>
-</div> 
 </template>
 <script>
 export default {
@@ -32,23 +31,21 @@ export default {
     color:#22702A;
 }
 .subtitle{
-    text-align: center;
-    white-space: nowrap;
-    font-weight : 600;
-    letter-spacing:4px;
-    line-height:100px;
-    text-transform: lowercase;
-    position: absolute;
-    margin-top:330px;
-    
-    font-size:40px;
-	width: 200px;
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
-    font-weight: 200;
-    color: #777;
+	margin-top:270px;
+	text-align: center;
+	white-space: nowrap;
+	font-weight : 600;
+	letter-spacing:4px;
+	line-height:100px;
+	text-transform: lowercase;
+	font-size:40px;
+	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+	font-weight: 200;
+	color: #777;
 }
 .title{
-    text-align: center;
+	transform:translateY(290px);
+	margin:auto; 
     white-space: nowrap;
     font-weight : 600;
     letter-spacing:4px;
@@ -56,24 +53,23 @@ export default {
     text-transform: uppercase;
     font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
     color:#212121;
-    position: absolute;
-    margin-top:250px;
+    /* position: absolute; */
     font-size:40px;
 	width: 200px;
+	
 }
 .clock {
-	position: absolute;
+	position: fixed;
+	top: 15%;
+	left: 50%;
+	margin-top: -50px;
+	margin-left: -100px;
+	
 	height: 200px;
 	width: 200px;
 	background-color: #fff;
 	border-radius: 100%;
 	border: 10px solid #005F70;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	margin: auto;
-    margin-bottom: 30%;
 }
 .clock .top {
 	position: absolute;
