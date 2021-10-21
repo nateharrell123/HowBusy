@@ -3,19 +3,19 @@
     <Clock/>
   </div>
   <div>
-    <!--<Search/> -->
+    <Search/>
   </div>
 </template>
 
 <script>
 import Clock from "./components/Clock.vue";
-//import Search from "./components/Search.vue";
+import Search from "./components/Search.vue";
 
 export default {
   name: "App",
   components: {
     Clock,
-    //Search
+    Search
   },
 };
 </script>

@@ -1,29 +1,35 @@
 <template>
   <div class="search">
     <div class="inputclass">
-      <input
+      <!-- <input
         v-model="radius"
         v-on:keyup.enter="findNearby"
         class="box"
         placeholder="Enter a radius (mi.):"
-      />
+      /> -->
+    <input
+    class="searchInput" 
+    placeholder="Enter a radius (Mi.)"
+    v-model="radius"
+    v-on:keyup.enter="findNearby"
+    >
     </div>
     <div class="selectclass">
-      <select v-model="type" class="dropdown">
+      <!-- <select v-model="type" class="dropdown">
         <option value="restaurant"> Restaurant </option>
         <option value="Bar"> Bar </option>
-      </select>
+      </select> -->
     </div>
     <div>
-      <ResultsTable
+      <!-- <ResultsTable
       :SearchResults="places"
-      />
+      /> -->
     </div>
   </div>
 </template>
 
 <script>
-import ResultsTable from "/Users/nateharrell/Documents/csproject/src/components/ResultsTable.vue";
+//import ResultsTable from "/Users/nateharrell/Documents/csproject/src/components/ResultsTable.vue";
 export default {
   data() {
     return {
@@ -40,7 +46,7 @@ export default {
   },
 
   components : {
-    ResultsTable
+    //ResultsTable
   },
 
   mounted : function (){
@@ -84,26 +90,17 @@ export default {
 </script>
 
 <style scoped>
-.search {
+.searchInput{
+  font-size: 2rem;
+  padding: 15px 45px 15px 30px;
+  font-family: Source Code Pro,SF Mono,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-weight: 300;
   width: 100%;
-}
-select {
-    border:1px solid #ccc;
-    vertical-align:top;
+  box-sizing: border-box;
+  letter-spacing: -.7px;
 }
 .inputclass {
   display:inline-block;
-}
-.selectclass {
-  display:inline;
-  padding-left:70px;
-  width:300px;
-}
-input, select{
-  height : 30px;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
 }
 .box {
   font-size: 20px;
