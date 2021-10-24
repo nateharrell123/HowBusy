@@ -7,7 +7,7 @@
     </select>
   </div>
 
-    <div class="inputclass" >
+    <div class="radiusDiv">
       <input style="width: 407px;"
       v-show="isRadiusSearch"
       class="radiusSearch" 
@@ -17,7 +17,7 @@
       >
     </div>
 
-    <div>
+    <div class="nearbySelect">
       <select class="selectClass" v-model="filterType" @change="filterType($event)" style="width: 407px;"
       v-show="isRadiusSearch">
         <option value="" disabled selected>Filter</option>
@@ -111,8 +111,6 @@ export default {
 
 <style scoped>
 .radiusSearch{
-  display:block;
-  margin:auto;
   margin-top:10px;
   font-size: 1.5rem;
   padding: 15px 45px 15px 30px;
@@ -121,6 +119,9 @@ export default {
   box-sizing: border-box;
   letter-spacing: 2px;
   color: rgba(0, 0, 0, 0.5);
+}
+.radiusDiv{
+  display:inline-block;
 }
 .selectClass{
   display:block;
@@ -133,6 +134,9 @@ export default {
   box-sizing: border-box;
   letter-spacing: 2px;
   color: rgba(0, 0, 0, 0.5);
+}
+.nearbySelect{
+  display:inline-block;
 }
 .selectField{
   padding-bottom:20px;
