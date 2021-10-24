@@ -1,6 +1,12 @@
 <template>
+    <select class="selectClass">
+      <option value="" disabled selected>Choose a search method:</option>
+      <option value="SearchSpecific">Search nearby</option>
+      <option value="SearchNearby">Search specific</option>
+    </select>
     <div class="inputclass" >
     <input
+    v-show="isRadiusSearch"
     class="searchInput" 
     placeholder="Enter a radius (mi.):"
     v-model="radius"
@@ -34,6 +40,8 @@ export default {
       type: "",
       radius : null,
       places: [],
+      isRadiusSearch : false,
+      isSpecificSearch : false
     }
   },
 
@@ -93,9 +101,11 @@ export default {
   box-sizing: border-box;
   letter-spacing: 2px;
   color: rgba(0, 0, 0, 0.5);
-
 }
-
+.selectClass{
+  display:block;
+  margin:auto;
+}
 .results{
   margin: auto;
   width: 25%;
