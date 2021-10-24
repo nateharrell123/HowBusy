@@ -23,8 +23,8 @@
       <select class="selectClass" v-model="nearbyFilterType" @change="radiusFilterChanged($event)" style="width: 402px;"
       v-show="isRadiusSearch">
       <option value="" disabled selected>Choose a search method:</option>
-        <option value="Restaurants">Restaurants</option>
-        <option value="Bars">Bars</option>
+        <option value="restaurant">Restaurants</option>
+        <option value="bar">Bars</option>
       </select>
     </div>
 
@@ -48,13 +48,12 @@ export default {
         lat: 0,
         lng: 0
       },
-      type: "",
+      nearbyFilterType: "",
       radius : null,
       places: [],
       isRadiusSearch : false,
       isSpecificSearch : false,
       searchType: "",
-      nearbyFilterType : ""
     }
   },
 
@@ -85,7 +84,7 @@ export default {
       //url: 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522%2C151.1957362&radius=1500&type=restaurant&keyword=cruise&key=YOUR_API_KEY',
       var config = {
         method: "get",
-        url: `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${this.coordinates.lat},${this.coordinates.lng}&radius=${this.radius}&key=AIzaSyDASvg4ATeMQcAsocmem5kFdTMDw_NSJwo`,
+        url: `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${this.coordinates.lat},${this.coordinates.lng}&radius=${this.radius}&type=${this.nearbyFilterType}&key=AIzaSyDASvg4ATeMQcAsocmem5kFdTMDw_NSJwo`,
       };
       let self = this; // strange :P
       axios(config)
@@ -112,6 +111,7 @@ export default {
     },
     radiusFilterChanged(){
       this.findNearby()
+      console.log(this.nearbyFilterType)
     }
     
   },
