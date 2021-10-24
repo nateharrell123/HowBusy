@@ -20,9 +20,9 @@
     </div>
 
     <div class="nearbySelect">
-      <select class="selectClass" v-model="filterType" @change="filterType($event)" style="width: 400px;"
+      <select class="selectClass" v-model="nearbyFilterType" @change="filterType($event)" style="width: 400px;"
       v-show="isRadiusSearch">
-        <option value="" disabled selected>Filter</option>
+      <option value="" disabled selected>Choose a search method:</option>
         <option value="Restaurants">Restaurants</option>
         <option value="Bars">Bars</option>
       </select>
@@ -53,7 +53,8 @@ export default {
       places: [],
       isRadiusSearch : false,
       isSpecificSearch : false,
-      searchType: ""
+      searchType: "",
+      nearbyFilterType : ""
     }
   },
 
