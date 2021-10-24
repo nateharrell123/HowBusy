@@ -1,8 +1,8 @@
 <template>
-    <select class="selectClass">
+    <select class="selectClass" v-model="searchType" @change="selectChanged($event)">
       <option value="" disabled selected>Choose a search method:</option>
-      <option value="SearchSpecific">Search nearby</option>
-      <option value="SearchNearby">Search specific</option>
+      <option value="SearchNearby">Search nearby</option>
+      <option value="SearchSpecific">Search specific</option>
     </select>
     <div class="inputclass" >
     <input
@@ -41,7 +41,8 @@ export default {
       radius : null,
       places: [],
       isRadiusSearch : false,
-      isSpecificSearch : false
+      isSpecificSearch : false,
+      searchType: ""
     }
   },
 
@@ -85,6 +86,18 @@ export default {
           console.log(error);
         });
     },
+    selectChanged(){
+        if (event.target.value === "SearchSpecific")
+        {
+          this.isSpecificSearch = !this.isSpecificSearch;
+          this.isRadiusSearch = false;
+        }
+        if (event.target.value === "SearchNearby")
+        {
+          this.isRadiusSearch = !this.isRadiusSearch;
+          this.isSpecificSearch = false;
+        }
+    }
   },
 };
 </script>
@@ -105,6 +118,14 @@ export default {
 .selectClass{
   display:block;
   margin:auto;
+  margin-top:10px;
+  font-size: 1.5rem;
+  padding: 15px 45px 15px 30px;
+	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+  font-weight: 300;
+  box-sizing: border-box;
+  letter-spacing: 2px;
+  color: rgba(0, 0, 0, 0.5);
 }
 .results{
   margin: auto;
