@@ -1,22 +1,29 @@
 <template>
+  <div class="selectField">
     <select class="selectClass" v-model="searchType" @change="selectChanged($event)">
       <option value="" disabled selected>Choose a search method:</option>
       <option value="SearchNearby">Search nearby</option>
       <option value="SearchSpecific">Search specific</option>
     </select>
+  </div>
+
     <div class="inputclass" >
-    <input
-    v-show="isRadiusSearch"
-    class="searchInput" 
-    placeholder="Enter a radius (mi.):"
-    v-model="radius"
-    v-on:keyup.enter="findNearby"
-    >
-    <div class="searchIcon">
-    <svg xmlns="http://www.w3.org/2000/svg">
-      <!-- more tags here -->
-    </svg>
+      <input style="width: 407px;"
+      v-show="isRadiusSearch"
+      class="radiusSearch" 
+      placeholder="Enter a radius (mi.):"
+      v-model="radius"
+      v-on:keyup.enter="findNearby"
+      >
     </div>
+
+    <div>
+      <select class="selectClass" v-model="filterType" @change="filterType($event)" style="width: 407px;"
+      v-show="isRadiusSearch">
+        <option value="" disabled selected>Filter</option>
+        <option value="Restaurants">Restaurants</option>
+        <option value="Bars">Bars</option>
+      </select>
     </div>
 
     <div class="results">
@@ -103,11 +110,11 @@ export default {
 </script>
 
 <style scoped>
-.searchInput{
+.radiusSearch{
   display:block;
   margin:auto;
   margin-top:10px;
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 15px 45px 15px 30px;
 	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
   font-weight: 300;
@@ -126,6 +133,9 @@ export default {
   box-sizing: border-box;
   letter-spacing: 2px;
   color: rgba(0, 0, 0, 0.5);
+}
+.selectField{
+  padding-bottom:20px;
 }
 .results{
   margin: auto;
