@@ -8,7 +8,6 @@
   </div>
 
   <div class="centeredRadiusSearch">
-
     <div class="radiusDiv">
       <input style="width: 407px;"
       v-show="isRadiusSearch"
@@ -18,7 +17,6 @@
       v-on:keyup.enter="findNearby"
       >
     </div>
-
     <div class="nearbySelect">
       <select class="selectClass" v-model="nearbyFilterType" @change="radiusFilterChanged($event)" style="width: 402px;"
       v-show="isRadiusSearch">
@@ -27,8 +25,15 @@
         <option value="bar">Bars</option>
       </select>
     </div>
-
   </div>
+
+      <div class="centeredRadiusSearch">
+      <input style="width: 407px;"
+      v-show="isSpecificSearch"
+      class="specificSearch" 
+      placeholder="Search for a place:"
+      >
+    </div>
 
     <div class="results">
       <ResultsTable
@@ -113,13 +118,22 @@ export default {
       this.findNearby()
       console.log(this.nearbyFilterType)
     }
-    
   },
 };
 </script>
 
 <style scoped>
 .radiusSearch{
+  margin-top:10px;
+  font-size: 1.5rem;
+  padding: 15px 45px 15px 30px;
+	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+  font-weight: 300;
+  box-sizing: border-box;
+  letter-spacing: 2px;
+  color: rgba(0, 0, 0, 0.5);
+}
+.specificSearch{
   margin-top:10px;
   font-size: 1.5rem;
   padding: 15px 45px 15px 30px;
