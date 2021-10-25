@@ -39,7 +39,8 @@
       style="width: 600px;"
       v-show="isSpecificSearch"
       class="specificSearch"
-       placeholder="Search for a place: "
+      id="specificSearch"
+      placeholder="Search for a place: "
       ></GMapAutocomplete>
     </div>
 
@@ -77,6 +78,8 @@ export default {
 
   mounted : function (){
     this.grabLocation()
+    var element = document.getElementById("specificSearch");
+    element.addEventListener("blur", function() { this.findNearby()});
   },
 
   /* Functions */
