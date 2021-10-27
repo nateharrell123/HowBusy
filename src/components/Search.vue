@@ -40,6 +40,7 @@
       v-show="isSpecificSearch"
       class="specificSearch"
       id="specificSearch"
+      @place_changed="setPlace"
       placeholder="Search for a place: "
       ></GMapAutocomplete>
     </div>
@@ -94,6 +95,10 @@ export default {
       //console.log(this.coordinates.lat);
         })
         .catch((error) => alert(error));
+    },
+    setPlace(placeResultData){
+      console.log(placeResultData)
+      //self.places = placeResultData.place_id;
     },
     findNearby() {
       var axios = require("axios");
