@@ -108,9 +108,10 @@ export default {
         })
         .catch((error) => alert(error));
     },
-    setPlace(placeResultData){
+    setPlace(placeResultData){ // gross
       this.specificData = placeResultData
       this.specificIsLoaded = !this.specificIsLoaded
+      this.nearbyIsLoaded = !this.nearbyIsLoaded
     },
     findNearby() {
       var axios = require("axios");
@@ -125,6 +126,7 @@ export default {
           console.log(JSON.stringify(response.data));
           self.places = response.data.results;
           self.nearbyIsLoaded = true;
+          self.specificIsLoaded = false;
         })
         .catch(function (error) {
           console.log(error);
@@ -134,6 +136,7 @@ export default {
         if (event.target.value === "SearchSpecific")
         {
           this.isSpecificSearch = !this.isSpecificSearch;
+          
           this.isRadiusSearch = false;
         }
         if (event.target.value === "SearchNearby")
