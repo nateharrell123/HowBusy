@@ -45,6 +45,13 @@
       ></GMapAutocomplete>
     </div>
 
+    <div class="centeredRadiusSearch">
+      <SpecificSearch
+      :SpecificData="specificData"
+      v-show="isLoaded"
+      />
+    </div>
+
     <div class="results">
       <ResultsTable
       :SearchResults="places"
@@ -53,8 +60,9 @@
 </template>
 
 <script>
-
-import ResultsTable from "/Users/nateharrell/Documents/csproject/src/components/ResultsTable.vue";
+import SpecificSearch from "/Users/nateharrell/Documents/csproject/src/components/SpecificSearch.vue";
+//import ResultsTable from "./components/ResultsTable.vue";
+import ResultsTable from "/Users/nateharrell/Documents/csproject/src/components/ResultsTable.vue" // idk
 export default {
   data() {
     return {
@@ -66,15 +74,18 @@ export default {
       },
       nearbyFilterType: "",
       radius : null,
+      isLoaded : false,
       places: [],
       isRadiusSearch : false,
       isSpecificSearch : false,
       searchType: "",
+      specificData : {}
     }
   },
 
   components : {
-    ResultsTable
+    ResultsTable,
+    SpecificSearch
   },
 
   mounted : function (){
@@ -97,8 +108,8 @@ export default {
         .catch((error) => alert(error));
     },
     setPlace(placeResultData){
-      console.log(placeResultData)
-      //self.places = placeResultData.place_id;
+      this.specificData = placeResultData
+      
     },
     findNearby() {
       var axios = require("axios");
