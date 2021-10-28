@@ -48,13 +48,14 @@
     <div class="centeredRadiusSearch">
       <SpecificSearch
       :SpecificData="specificData"
-      v-show="isLoaded"
+      v-show="specificIsLoaded"
       />
     </div>
 
     <div class="results">
       <ResultsTable
       :SearchResults="places"
+      v-show="nearbyIsLoaded"
       />
     </div>
 </template>
@@ -66,7 +67,6 @@ import ResultsTable from "/Users/nateharrell/Documents/csproject/src/components/
 export default {
   data() {
     return {
-      //
       name: "Search",
       coordinates: {
         lat: 0,
@@ -74,7 +74,8 @@ export default {
       },
       nearbyFilterType: "",
       radius : null,
-      isLoaded : false,
+      nearbyIsLoaded : false,
+      specificIsLoaded : false,
       places: [],
       isRadiusSearch : false,
       isSpecificSearch : false,
@@ -109,7 +110,7 @@ export default {
     },
     setPlace(placeResultData){
       this.specificData = placeResultData
-      
+      this.specificIsLoaded = !this.specificIsLoaded
     },
     findNearby() {
       var axios = require("axios");
@@ -122,8 +123,8 @@ export default {
       axios(config)
         .then(function (response) {
           console.log(JSON.stringify(response.data));
-
           self.places = response.data.results;
+          self.nearbyIsLoaded = true;
         })
         .catch(function (error) {
           console.log(error);
