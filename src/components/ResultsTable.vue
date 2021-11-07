@@ -11,8 +11,8 @@
       <tbody>
         <tr v-for="(place, index) in SearchResults" :key="place.id">
           <td>{{place.name}}</td>
-          <!-- <td>{{place.photos[index].height}}</td>  -->
-          <td> {{index}} </td>
+          <td>{{place.photos[index].height}}</td> 
+          <!-- <td> {{index}} </td> -->
           <td>Data 3</td>
         </tr>
       </tbody>
