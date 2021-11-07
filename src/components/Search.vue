@@ -147,7 +147,6 @@ export default {
     },
     radiusFilterChanged(){
       this.findNearby()
-      console.log(this.nearbyFilterType)
     }
   },
 };

@@ -9,9 +9,9 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="place in SearchResults" :key="place.id">
+        <tr v-for="(place, index) in SearchResults" :key="place.id">
           <td>{{place.name}}</td>
-          <td>Data 2</td> 
+          <td>{{index}}</td> 
           <td>Data 3</td>
         </tr>
       </tbody>
