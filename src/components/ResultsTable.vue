@@ -11,7 +11,7 @@
       <tbody>
         <tr v-for="place in SearchResults" :key="place.id">
           <td>{{ place.name }}</td>
-          <!-- <td v-for="item in place.photos" :key="item.id"> {{ getPhoto(item.photo_reference) }} </td> -->
+          <td v-for="item in place.photos" :key="item.id"> {{ getPhoto(item.photo_reference) }} </td>
           <td> Picture goes here </td>
           <td>Data 3</td>
         </tr>
@@ -40,7 +40,7 @@ export default {
           };
           axios(config)
             .then(response => {
-              console.log(JSON.stringify(response.data));
+              console.log(response)
             })
             .catch(function (error) {
               console.log(error);

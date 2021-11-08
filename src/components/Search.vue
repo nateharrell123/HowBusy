@@ -123,7 +123,7 @@ export default {
       let self = this; // strange :P
       axios(config)
         .then(function (response) {
-          console.log(JSON.stringify(response.data));
+          // console.log(JSON.stringify(response.data));
           self.places = response.data.results;
           self.nearbyIsLoaded = true;
           self.specificIsLoaded = false;
