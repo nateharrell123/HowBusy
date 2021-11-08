@@ -9,9 +9,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(place, index) in SearchResults" :key="place.id">
-          <td>{{place.name}}</td>
-          <td>{{place.photos[index].height}}</td> 
+        <tr v-for="place in SearchResults" :key="place.id">
+          <td>{{ place.name }}</td>
+          <td v-for="item in place.photos" :key="item.id">
+            {{ getPhoto(item.photo_reference) }}
+          </td>
           <!-- <td> {{index}} </td> -->
           <td>Data 3</td>
         </tr>
@@ -22,20 +24,33 @@
 
 <script>
 export default {
-    props: {
-        SearchResults: Array
-    },
+  props: {
+    SearchResults: Array,
+  },
   data() {
     return {
       name: "ResultsTable",
-      mounted : function (){
-        this.setText()
+      mounted: function () {
+        this.setText();
       },
-      methods : {
-          setText(){
-              this.Name = "Hello"
-          }
-      }
+      methods: {
+        getPhoto(photo_reference) {
+          var axios = require("axios");
+          //url: 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522%2C151.1957362&radius=1500&type=restaurant&keyword=cruise&key=YOUR_API_KEY',
+          var config = {
+            method: "get",
+            url: `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${photo_reference}&key=AIzaSyDASvg4ATeMQcAsocmem5kFdTMDw_NSJwo`
+          };
+          //let self = this; // strange :P
+          axios(config)
+            .then(function (response) {
+              console.log(response)
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+        },
+      },
     };
   },
 };
