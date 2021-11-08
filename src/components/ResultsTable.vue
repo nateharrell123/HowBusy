@@ -18,7 +18,10 @@
           <!-- <td v-for="item in place.photos" :key="item.id"> {{ getPhoto(item.photo_reference) }} </td> -->
           <td> Picture goes here </td>
           <td>Data 3</td>
-          <td> </td>
+          <td class="clockImage">
+            Text here haha
+            <img src="Clock.png">
+          </td>
         </tr>
       </tbody>
     </table>
@@ -26,7 +29,9 @@
 </template>
 
 <script>
+import Clock from "src/assets/Clock.png"
 export default {
+
   props: {
     SearchResults: Array,
   },
@@ -101,4 +106,5 @@ export default {
 .content-table tbody tr:last-of-type {
   border-bottom: 3px solid #09a8d9;
 }
+
 </style>
