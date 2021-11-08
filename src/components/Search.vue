@@ -199,8 +199,7 @@ export default {
   padding-bottom:20px;
 }
 .results{
-  margin: auto;
-  width: 25%;
+  text-align: -webkit-center;
 }
 
 .box {

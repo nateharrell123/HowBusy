@@ -83,7 +83,7 @@ export default {
 }
 
 .content-table th{
-  padding: 12px 15px;
+  padding: 12px;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
 
 }
