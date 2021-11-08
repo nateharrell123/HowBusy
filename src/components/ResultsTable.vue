@@ -34,21 +34,21 @@ export default {
         this.setText();
       },
       methods: {
-        getPhoto(photo_reference) {
-          var axios = require("axios");
-          //url: 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522%2C151.1957362&radius=1500&type=restaurant&keyword=cruise&key=YOUR_API_KEY',
-          var config = {
-            method: "get",
-            url: `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${photo_reference}&key=AIzaSyDASvg4ATeMQcAsocmem5kFdTMDw_NSJwo`
-          };
-          //let self = this; // strange :P
-          axios(config)
-            .then(function (response) {
-              console.log(response)
-            })
-            .catch(function (error) {
-              console.log(error);
-            });
+        getPhoto(photo_reference){
+      var axios = require("axios");
+      //url: 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522%2C151.1957362&radius=1500&type=restaurant&keyword=cruise&key=YOUR_API_KEY',
+      var config = {
+        method: "get",
+        url: `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${photo_reference}&key=AIzaSyDASvg4ATeMQcAsocmem5kFdTMDw_NSJwo`
+      };
+      let self = this; // strange :P
+      axios(config)
+        .then(function (response) {
+          console.log(JSON.stringify(response.data));
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
         },
       },
     };
