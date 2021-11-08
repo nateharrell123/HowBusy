@@ -17,10 +17,10 @@
           </td>
           <!-- <td v-for="item in place.photos" :key="item.id"> {{ getPhoto(item.photo_reference) }} </td> -->
           <td> Picture goes here </td>
-          <td>Data 3</td>
+          <td>Click here to find busy-ness</td>
           <td class="clockImage">
             Text here haha
-            <img :src="Clock">
+            <!-- <img :src="Clock"> -->
           </td>
         </tr>
       </tbody>
