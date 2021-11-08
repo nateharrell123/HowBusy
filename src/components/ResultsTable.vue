@@ -20,7 +20,7 @@
           <td>Data 3</td>
           <td class="clockImage">
             Text here haha
-            <img src="Clock.png">
+            <img :src="Clock">
           </td>
         </tr>
       </tbody>
@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import Clock from "src/assets/Clock.png"
+import Clock from "/Users/nateharrell/Documents/csproject/src/assets/Clock.jpeg"
 export default {
 
   props: {
@@ -37,6 +37,7 @@ export default {
   },
   data() {
     return {
+      Clock : Clock,
       name: "ResultsTable",
       mounted: function () {
         this.setText();
