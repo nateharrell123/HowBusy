@@ -3,7 +3,7 @@
     <table class="content-table">
       <thead>
         <tr>
-          <th>Establishment</th>
+          <th @click="sort('Establishment')">Establishment</th>
           <th></th>
           <th>Busy-ness</th>
           <th> Hours </th>
@@ -39,9 +39,6 @@ export default {
     return {
       Clock : Clock,
       name: "ResultsTable",
-      mounted: function () {
-        this.setText();
-      },
     };
   },
     methods: {
