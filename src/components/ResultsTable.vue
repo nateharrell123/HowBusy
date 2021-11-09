@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import Clock from "/Users/nateharrell/Documents/csproject/src/assets/Clock.jpeg"
+import Clock from "../assets/Clock.jpeg"
 export default {
 
   props: {
@@ -42,23 +42,23 @@ export default {
       mounted: function () {
         this.setText();
       },
-      methods: {
-        getPhoto(photo_reference){
-          var axios = require("axios");
-          var config = {
-            method: "get",
-            url: `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${photo_reference}&key=AIzaSyDASvg4ATeMQcAsocmem5kFdTMDw_NSJwo`
-          };
-          axios(config)
-            .then(response => {
-              console.log(response)
-            })
-            .catch(function (error) {
-              console.log(error);
-            });
-        },
-      },
     };
+  },
+    methods: {
+    getPhoto(photo_reference){
+      var axios = require("axios");
+      var config = {
+        method: "get",
+        url: `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${photo_reference}&key=AIzaSyDASvg4ATeMQcAsocmem5kFdTMDw_NSJwo`
+      };
+      axios(config)
+        .then(response => {
+          console.log(response)
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    },
   },
 };
 </script>
