@@ -1,7 +1,6 @@
 <template>
     <footer class="bottom">
         <div class="links">
-
         </div>
     </footer>
 </template>
@@ -22,5 +21,16 @@ export default {
     padding: 0 0 50px;
     color: #aeb3ba;
     flex-direction: column;
+}
+
+body 
+{ 
+   margin:0; 
+}  
+
+.links{
+    width: 100%;
+    background: #32363b;
+    padding: 0 20px;
 }
 </style>
