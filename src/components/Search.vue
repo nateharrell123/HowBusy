@@ -25,15 +25,7 @@
       </select>
     </div>
   </div>
-<!-- 
-    <div class="centeredRadiusSearch">
-      <input style="width: 407px;"
-      v-show="isSpecificSearch"
-      class="specificSearch" 
-      placeholder="Search for a place:"
-      id="autocomplete"
-      >
-    </div> -->
+  
     <div class="centeredRadiusSearch">
       <GMapAutocomplete
       style="width: 600px;"

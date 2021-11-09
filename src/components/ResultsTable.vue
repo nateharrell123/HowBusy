@@ -15,8 +15,8 @@
             <br>
             <span class="placeAddressText"> {{place.vicinity}}</span>
           </td>
-          <td v-for="item in place.photos" :key="item.id"> {{ getPhoto(item.photo_reference) }} </td>
-          <!-- <td> Picture goes here </td> -->
+          <!-- <td v-for="item in place.photos" :key="item.id"> {{ getPhoto(item.photo_reference) }} </td> -->
+          <td> Picture goes here </td>
           <td>Click here to find busy-ness</td>
           <td class="clockImage">
             Text here haha
@@ -105,7 +105,7 @@ export default {
   background-color: #f3f3f3;
 }
 .content-table tbody tr:last-of-type {
-  border-bottom: 3px solid #09a8d9;
+  border-bottom: 3px solid #22702A;
 }
 
 </style>
