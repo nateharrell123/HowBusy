@@ -10,7 +10,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="place in SearchResults" :key="place.id">
+        <tr v-for="place in sortedSearchResults" :key="place.id">
           <td>{{ place.name }}
             <br>
             <span class="placeAddressText"> {{place.vicinity}}</span>
@@ -39,7 +39,13 @@ export default {
     return {
       Clock : Clock,
       name: "ResultsTable",
+      searchResults: [],
+      currentSort:'name',
+      currentSortDir:'asc'
     };
+  },
+  mounted() {
+    this.searchResults = this.SearchResults.slice();
   },
     methods: {
     getPhoto(photo_reference){
@@ -56,7 +62,24 @@ export default {
           console.log(error);
         });
     },
+    sort(s){
+    if(s === this.currentSort) {
+      this.currentSortDir = this.currentSortDir==='asc'?'desc':'asc';
+    }
+    this.currentSort = s;
+    }
   },
+  watch:{
+  sortedSearchResults:function() {
+    return this.searchResults.sort((a,b) => {
+      let modifier = 1;
+      if(this.currentSortDir === 'desc') modifier = -1;
+      if(a[this.currentSort] < b[this.currentSort]) return -1 * modifier;
+      if(a[this.currentSort] > b[this.currentSort]) return 1 * modifier;
+      return 0;
+    });
+  }
+}
 };
 </script>
 

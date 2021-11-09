@@ -116,6 +116,7 @@ export default {
       axios(config)
         .then(function (response) {
           // console.log(JSON.stringify(response.data));
+          
           self.places = response.data.results;
           self.nearbyIsLoaded = true;
           self.specificIsLoaded = false;
@@ -137,6 +138,7 @@ export default {
           this.isSpecificSearch = false;
         }
     },
+
     radiusFilterChanged(){
       this.findNearby()
     }
