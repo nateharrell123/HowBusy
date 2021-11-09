@@ -10,10 +10,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="place in sortedSearchResults" :key="place.id">
+        <tr v-for="place in SearchResults" :key="place.id">
           <td>{{ place.name }}
             <br>
-            <span class="placeAddressText"> {{place.vicinity}}</span>
+            <span class="placeAddressText"> {{place.vicinity}} </span>
           </td>
           <!-- <td v-for="item in place.photos" :key="item.id"> {{ getPhoto(item.photo_reference) }} </td> -->
           <td> Picture goes here </td>
@@ -45,7 +45,6 @@ export default {
     };
   },
   mounted() {
-    this.searchResults = this.SearchResults.slice();
   },
     methods: {
     getPhoto(photo_reference){
