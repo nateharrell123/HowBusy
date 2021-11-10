@@ -2,6 +2,9 @@
     <footer class="bottom">
         <div class="links">
         </div>
+        <section class="bottom-body">
+
+        </section>
     </footer>
 </template>
 
@@ -21,9 +24,20 @@ export default {
     padding: 0 0 50px;
     color: #aeb3ba;
     flex-direction: column;
-    
 }
 
+.links{
+    color : #32363b;
+}
+
+.bottom-body{
+    display: flex;
+    max-width: 800px;
+    padding: 30px 10px;
+    margin: auto;
+}
+
+/* White space be gone */
 body 
 { 
    margin:0; 
