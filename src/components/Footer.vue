@@ -1,11 +1,9 @@
 <template>
-    <footer class="bottom">
-        <div class="links">
-        </div>
-        <section class="bottom-body">
+<footer class="footer">
+    <div class="links">
 
-        </section>
-    </footer>
+    </div>
+</footer>
 </template>
 
 <script>
@@ -15,7 +13,11 @@ export default {
 </script>
 
 <style>
-.bottom{
+.links{
+    background: #32363b;
+    width : 100%;
+}
+.footer{
     background: #222;
     width: 100%;
     display: flex;
@@ -24,28 +26,11 @@ export default {
     padding: 0 0 50px;
     color: #aeb3ba;
     flex-direction: column;
+   position:absolute;
+   bottom:0;
+   width:100%;
 }
-
-.links{
-    color : #32363b;
-}
-
-.bottom-body{
-    display: flex;
-    max-width: 800px;
-    padding: 30px 10px;
-    margin: auto;
-}
-
-/* White space be gone */
-body 
-{ 
-   margin:0; 
-}  
-
-.links{
-    width: 100%;
-    background: #32363b;
-    padding: 0 20px;
+body{
+    margin:0;
 }
 </style>
