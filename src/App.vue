@@ -42,10 +42,5 @@ html,body {
   padding-bottom:100px;
 }
 
-.foot{
-  position:relative;
-  height : 100px;
-}
-
 
 </style>

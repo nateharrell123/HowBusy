@@ -19,12 +19,10 @@ export default {
 }
 .footer{
     background: #222;
-    padding: 0 0 50px;
     width: 100%;
     bottom: 0;
-    left: 0;
-    margin-top: -100px;
-    clear:both;
+    position:relative;
+    height : 200px;
 }
 body{
     margin:0;
