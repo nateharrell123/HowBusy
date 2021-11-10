@@ -22,7 +22,4 @@ export default {
 .search{
     padding-bottom:60px;   /* Height of the footer */
 }
-.foot{
-  height:60px;
-}
 </style>

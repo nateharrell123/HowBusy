@@ -19,16 +19,11 @@ export default {
 }
 .footer{
     background: #222;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 0 0 50px;
-    color: #aeb3ba;
-    flex-direction: column;
-   position:absolute;
-   bottom:0;
-   width:100%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 50px;
 }
 body{
     margin:0;
