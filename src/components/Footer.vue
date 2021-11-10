@@ -23,7 +23,8 @@ export default {
     width: 100%;
     bottom: 0;
     left: 0;
-    height: 50px;
+    margin-top: -100px;
+    clear:both;
 }
 body{
     margin:0;

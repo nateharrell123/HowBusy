@@ -177,7 +177,7 @@ export default {
 .selectClass{
   display:block;
   margin:auto;
-  margin-top:10px;
+  margin-top:50px;
   font-size: 1.5rem;
   padding: 15px 45px 15px 30px;
 	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
