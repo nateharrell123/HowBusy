@@ -3,7 +3,7 @@
     <Clock/>
   </div>
     <Search/>
-    <Footer/>
+    <Footer class="no"/>
 </template>
 
 <script>

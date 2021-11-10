@@ -21,6 +21,7 @@ export default {
     padding: 0 0 50px;
     color: #aeb3ba;
     flex-direction: column;
+    
 }
 
 body 
