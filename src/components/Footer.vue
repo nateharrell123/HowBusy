@@ -1,7 +1,9 @@
 <template>
 <footer class="footer">
     <div class="links">
-
+        <div class="black">
+            Black here
+        </div>
     </div>
 </footer>
 </template>
@@ -16,6 +18,11 @@ export default {
 .links{
     background: #32363b;
     width : 100%;
+    padding:100px 0px 0px;
+}
+.black{
+    background: #222;
+
     padding:100px;
 }
 .footer{
