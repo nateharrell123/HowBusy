@@ -44,6 +44,7 @@ export default {
 	color: #777;
 }
 .title{
+	padding-top:100px;
 	transform:translateY(290px);
 	margin:auto; 
     white-space: nowrap;

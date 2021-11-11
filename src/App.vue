@@ -1,7 +1,7 @@
 <template>
 <div class="container">
   <div class="main">
-    <Clock/>
+    <Clock class="bot"/>
     <Search class="search"/>
   </div>
 </div>
@@ -22,25 +22,36 @@ export default {
 };
 </script>
 
+
+<style>
+html,body {
+  height:100%;
+}
+#app {
+  display:flex;
+  flex-direction: column;
+  height:100%;
+}
+</style>
+
+
 <style scoped>
 .search{
     padding-bottom:60px;   /* Height of the footer */
 }
-html,body {
-  height:100%;
+
+.container{
+  flex:1 0 auto;
 }
+
 * {
   margin: 0;
   padding: 0;
-}
-.container {
-  min-height:100%;
 }
 
 .main{
   overflow:auto;
   padding-bottom:100px;
 }
-
 
 </style>

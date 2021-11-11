@@ -16,13 +16,10 @@ export default {
 .links{
     background: #32363b;
     width : 100%;
+    padding:100px;
 }
 .footer{
-    background: #222;
-    width: 100%;
-    bottom: 0;
-    position:relative;
-    height : 200px;
+    flex-shrink: 0;
 }
 body{
     margin:0;
