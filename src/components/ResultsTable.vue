@@ -64,20 +64,16 @@ export default {
     howBusyClick(place_id){
       console.log(place_id)
       var axios = require("axios");
-
-      var config = {
-        method: "get",
-        url: `http://127.0.0.1:5000/test`,
-      };
       
-      axios(config)
+      axios.post(`https://cors-anywhere.herokuapp.com/http://127.0.0.1:5000/test`, {
+        Test: 'hello'
+      })
         .then(function (response) {
           console.log(JSON.stringify(response.data))
         })
         .catch(function (error) {
           console.log(error);
         });
-
     },
     sort(s){
     if(s === this.currentSort) {
