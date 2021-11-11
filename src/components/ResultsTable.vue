@@ -19,7 +19,7 @@
           <td> Picture goes here </td>
           <td><button class="findBusyButton" @click="howBusyClick(place_id)">Click to find busy-ness </button></td>
           <td class="clockImage">
-            Text here haha
+            Text here
             <!-- <img :src="Clock"> -->
           </td>
         </tr>
@@ -64,16 +64,20 @@ export default {
     howBusyClick(place_id){
       console.log(place_id)
       var axios = require("axios");
+
+      var config = {
+        method: "get",
+        url: `http://127.0.0.1:5000/test`,
+      };
       
-      axios.post(`http://127.0.0.1:5000/test`, {
-        Test: 'hello'
-      })
+      axios(config)
         .then(function (response) {
           console.log(JSON.stringify(response.data))
         })
         .catch(function (error) {
           console.log(error);
         });
+
     },
     sort(s){
     if(s === this.currentSort) {
