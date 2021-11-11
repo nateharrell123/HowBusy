@@ -2,7 +2,15 @@
 <footer class="footer">
     <div class="links">
         <div class="black">
-            Black here
+            <h3 class="description-header">
+                Waiting stinks, am I right?
+            </h3>
+            <p class="description-text">
+                If only there was a quick and easy way to find out how busy nearby establishments are, without having to call first. 
+            </p>
+            <p class="description-text">
+                 
+            </p>
         </div>
     </div>
 </footer>
@@ -20,10 +28,31 @@ export default {
     width : 100%;
     padding:100px 0px 0px;
 }
+.description-header{
+    font-size: 1.5rem;
+    color: #9aa1aa;
+    text-align: center;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+    flex-basis: 66%;
+
+    display: flex;
+    max-width: 800px;
+    padding: 30px 10px 20px;
+    margin: auto;
+}
+.description-text{
+    display: flex;
+    font-size: 1.2rem;
+    max-width: 800px;
+    padding: 30px;
+    margin: auto;
+    color: #9aa1aa;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+}
 .black{
     background: #222;
-
     padding:100px;
+    
 }
 .footer{
     flex-shrink: 0;
