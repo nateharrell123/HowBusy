@@ -17,7 +17,7 @@
           </td>
           <!-- <td v-for="item in place.photos" :key="item.id"> {{ getPhoto(item.photo_reference) }} </td> -->
           <td> Picture goes here </td>
-          <td>Click here to find busy-ness</td>
+          <td><button class="findBusyButton" @click="howBusyClick">Click to find busy-ness </button></td>
           <td class="clockImage">
             Text here haha
             <!-- <img :src="Clock"> -->
@@ -61,6 +61,23 @@ export default {
           console.log(error);
         });
     },
+    howBusyClick(){
+      var axios = require("axios");
+
+      var config = {
+        method: "get",
+        url: `http://127.0.0.1:5000/test`,
+      };
+      
+      axios(config)
+        .then(function (response) {
+          console.log(JSON.stringify(response.data))
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+
+    },
     sort(s){
     if(s === this.currentSort) {
       this.currentSortDir = this.currentSortDir==='asc'?'desc':'asc';
@@ -88,7 +105,7 @@ export default {
   margin: 25px 0;
   font-size: 1.3rem;
   min-width: 400px;
-  width:1000px;
+  width:1300px;
   position: relative;
   justify-content: middle;
 
@@ -96,13 +113,19 @@ export default {
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
 }
+.findBusyButton{
+  border:none;
+  background-color:inherit;
+  font-size:1.3rem;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+}
+.findBusyButton:hover{background: #eee;}
 .placeAddressText{
   color: rgba(0, 0, 0, 0.5);
   font-size :1.0rem;
 }
 .content-table thead tr {
   background-color: #6699b8;
-
   color: #fff;
   text-align: left;
   font-weight: bold;
