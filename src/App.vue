@@ -1,4 +1,5 @@
 <template>
+<!-- <Loader/> -->
 <div class="container">
   <div class="main">
     <Clock class="bot"/>
@@ -12,12 +13,14 @@
 import Clock from "./components/Clock.vue";
 import Search from "./components/Search.vue";
 import Footer from "./components/Footer.vue"
+// import Loader from "./components/Loader.vue"
 export default {
   name: "App",
   components: {
     Clock,
     Search,
-    Footer
+    Footer,
+    // Loader
   },
 };
 </script>
