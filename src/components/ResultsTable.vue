@@ -101,7 +101,9 @@ export default {
   font-size :1.0rem;
 }
 .content-table thead tr {
-  background-color: #22702A;
+  background-color: gray;
+      color: rgba(0, 0, 0, 0.5);
+
   color: #fff;
   text-align: left;
   font-weight: bold;
