@@ -14,14 +14,18 @@
       placeholder="Enter a radius (mi.):"
       v-model="radius"
       v-on:keyup.enter="findNearby"
+      maxlength="2"
       >
     </div>
     <div class="nearbySelect">
-      <select class="selectClass" v-model="nearbyFilterType" @change="radiusFilterChanged($event)" style="width: 402px;"
+      <select class="selectClass" 
+      v-model="nearbyFilterType" @change="radiusFilterChanged($event)" style="width: 402px;"
       v-show="isRadiusSearch">
-      <option value="" disabled selected>Choose a search method:</option>
+      <option value="" disabled selected>Establishment type:</option>
         <option value="restaurant">Restaurants</option>
         <option value="bar">Bars</option>
+        <option value="department_store">Grocery/Shopping</option>
+
       </select>
     </div>
   </div>
