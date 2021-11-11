@@ -7,6 +7,12 @@
     </select>
   </div>
   <div class="centeredRadiusSearch">
+    <svg class="searchIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
+    fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+    v-show="isRadiusSearch">
+    <circle cx="11" cy="11" r="8"></circle>
+    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
     <div class="radiusDiv">
       <input style="width: 407px;"
       v-show="isRadiusSearch"
@@ -16,6 +22,7 @@
       v-on:keyup.enter="findNearby"
       maxlength="2"
       >
+
     </div>
     <div class="nearbySelect">
       <select class="selectClass" 
@@ -54,6 +61,7 @@
       v-show="nearbyIsLoaded"
       />
     </div>
+
 </template>
 
 <script>
@@ -160,6 +168,9 @@ export default {
   box-sizing: border-box;
   letter-spacing: 2px;
   color: rgba(0, 0, 0, 0.5);
+}
+.searchIcon{
+    cursor: pointer;
 }
 .specificSearch{
   margin-top:10px;
