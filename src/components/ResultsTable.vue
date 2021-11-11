@@ -65,7 +65,7 @@ export default {
       console.log(place_id)
       var axios = require("axios");
       
-      axios.post(`https://cors-anywhere.herokuapp.com/http://127.0.0.1:5000/test`, {
+      axios.post(`http://127.0.0.1:5000/test`, {
         Test: 'hello'
       })
         .then(function (response) {
