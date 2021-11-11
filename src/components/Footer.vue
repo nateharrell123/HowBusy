@@ -1,6 +1,7 @@
 <template>
 <footer class="footer">
     <div class="links">
+    </div>
         <div class="black">
             <h3 class="description-header">
                 Waiting stinks, am I right?
@@ -20,7 +21,6 @@
             <a href="https://github.com/nateharrell123/csproject">  Star on GitHub </a>
         </div>
         </div>
-    </div>
 </footer>
 </template>
 
