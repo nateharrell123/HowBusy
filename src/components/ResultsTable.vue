@@ -68,6 +68,9 @@ export default {
       var config = {
         method: "get",
         url: `http://127.0.0.1:5000/test`,
+        params: {
+          place : 'example one'
+        }
       };
       
       axios(config)
