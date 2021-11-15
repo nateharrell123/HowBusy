@@ -17,7 +17,7 @@
           </td>
           <!-- <td v-for="item in place.photos" :key="item.id"> {{ getPhoto(item.photo_reference) }} </td> -->
           <td> Picture goes here </td>
-          <td><button class="findBusyButton" @click="howBusyClick(place.place_id)">Click to find busy-ness </button></td>
+          <td><button class="findBusyButton" @click="howBusyClick(place.place_id)"> Click to find busy-ness</button></td>
           <td class="clockImage">
             Text here
             <!-- <img :src="Clock"> -->
@@ -42,6 +42,7 @@ export default {
       searchResults: [],
       currentSort:'name',
       currentSortDir:'asc',
+      busyNess : ""
     };
   },
   mounted() {
@@ -72,10 +73,11 @@ export default {
           place : place_id
         }
       };
-      
+      let self = this;
       axios(config)
         .then(function (response) {
           console.log(JSON.stringify(response.data))
+          self.busyNess = response.data
         })
         .catch(function (error) {
           console.log(error);
