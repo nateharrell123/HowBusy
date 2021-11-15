@@ -19,8 +19,7 @@
           <td> Picture goes here </td>
           <td><button class="findBusyButton" @click="howBusyClick(place.place_id)"> Click to find busy-ness</button></td>
           <td class="clockImage">
-            Text here
-            <!-- <img :src="Clock"> -->
+            {{ place.opening_hours }}
           </td>
         </tr>
       </tbody>
