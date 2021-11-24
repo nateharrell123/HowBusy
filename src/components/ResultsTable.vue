@@ -162,7 +162,7 @@ export default {
   background-color: #f3f3f3;
 }
 .content-table tbody tr:last-of-type {
-  border-bottom: 3px solid #22702A;
+  border-bottom: 3px solid #6699b8;
 }
 
 </style>
