@@ -19,6 +19,7 @@
 
         <div class="github">
             <a href="https://github.com/nateharrell123/csproject">  Star on GitHub </a>
+            <img src="/Users/nateharrell/Documents/csproject/src/assets/GitHub-Mark-Light-120px-plus.png"/>
         </div>
         </div>
 </footer>
@@ -49,6 +50,7 @@ export default {
     margin: auto;
 }
 .github{
+
 }
 .description-text{
     font-size: 1.2rem;
