@@ -18,7 +18,7 @@
           <!-- <td v-for="item in place.photos" :key="item.id"> {{ getPhoto(item.photo_reference) }} </td> -->
           <td> Picture goes here </td>
           <td><button class="findBusyButton" @click="howBusyClick(place.place_id)"> Click to find busy-ness {{ busyNess }}</button></td>
-          <td v-for="place in place.opening_hours" :key="place.id" class="clockImage">
+          <td v-for="place in place.opening_hours" :key="place.id" class="openText">
             {{openStatus(place)}}
           </td>
         </tr>
@@ -124,6 +124,8 @@ export default {
   border-radius: 5px 5px 0 0;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+}
+.openText{
 }
 .findBusyButton{
   border:none;
