@@ -17,8 +17,8 @@
           </td>
           <!-- <td v-for="item in place.photos" :key="item.id"> {{ getPhoto(item.photo_reference) }} </td> -->
           <td> Picture goes here </td>
-          <td v-show="!show"><button class="findBusyButton" @click="howBusyClick(place.place_id)"> Click to find busy-ness</button></td>
-          <td v-show="show"> Done </td>
+          <td v-if="!show"><button class="findBusyButton" @click="howBusyClick(place.place_id)"> Click to find busy-ness</button></td>
+          <td v-else> Done </td>
           <td v-for="place in place.opening_hours" :key="place.id" class="openText">
             {{openStatus(place)}}
           </td>
