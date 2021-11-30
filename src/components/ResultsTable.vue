@@ -17,7 +17,8 @@
           </td>
           <!-- <td v-for="item in place.photos" :key="item.id"> {{ getPhoto(item.photo_reference) }} </td> -->
           <td> Picture goes here </td>
-          <td><button class="findBusyButton" @click="howBusyClick(place.place_id)"> Click to find busy-ness {{ busyNess }}</button></td>
+          <td v-show="!show"><button class="findBusyButton" @click="howBusyClick(place.place_id)"> Click to find busy-ness</button></td>
+          <td v-show="show"> Done </td>
           <td v-for="place in place.opening_hours" :key="place.id" class="openText">
             {{openStatus(place)}}
           </td>
@@ -41,7 +42,7 @@ export default {
       searchResults: [],
       currentSort:'name',
       currentSortDir:'asc',
-      busyNess : ""
+      show : false,
     };
   },
   mounted() {
@@ -68,7 +69,7 @@ export default {
       else return 'Closed.'
     },
     howBusyClick(place_id){
-       console.log(place_id)
+      console.log(place_id)
       var axios = require("axios");
 
       var config = {
@@ -82,7 +83,7 @@ export default {
       axios(config)
         .then(function (response) {
           console.log(JSON.stringify(response.data))
-          self.busyNess = response.data
+          self.show = true;
         })
         .catch(function (error) {
           console.log(error);
