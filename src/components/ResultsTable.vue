@@ -17,8 +17,7 @@
           </td>
           <!-- <td v-for="item in place.photos" :key="item.id"> {{ getPhoto(item.photo_reference) }} </td> -->
           <td> Picture goes here </td>
-          <td v-if="!show"><button class="findBusyButton" @click="howBusyClick(place.place_id)"> Click to find busy-ness</button></td>
-          <td v-else> Done </td>
+          <td><button class="findBusyButton" @click="howBusyClick(place.place_id)"> Click to find busy-ness </button></td>
           <td v-for="place in place.opening_hours" :key="place.id" class="openText">
             {{openStatus(place)}}
           </td>
@@ -42,7 +41,7 @@ export default {
       searchResults: [],
       currentSort:'name',
       currentSortDir:'asc',
-      show : false,
+      editing : false,
     };
   },
   mounted() {
@@ -71,7 +70,6 @@ export default {
     howBusyClick(place_id){
       console.log(place_id)
       var axios = require("axios");
-
       var config = {
         method: "post",
         url: `http://127.0.0.1:5000/test`,
@@ -79,34 +77,16 @@ export default {
           place : place_id
         }
       };
-      let self = this;
+      //let self = this;
       axios(config)
         .then(function (response) {
           console.log(JSON.stringify(response.data))
-          self.show = true;
         })
         .catch(function (error) {
           console.log(error);
         });
     },
-    sort(s){
-    if(s === this.currentSort) {
-      this.currentSortDir = this.currentSortDir==='asc'?'desc':'asc';
-    }
-    this.currentSort = s;
-    }
-  },
-  watch:{
-  sortedSearchResults:function() {
-    return this.searchResults.sort((a,b) => {
-      let modifier = 1;
-      if(this.currentSortDir === 'desc') modifier = -1;
-      if(a[this.currentSort] < b[this.currentSort]) return -1 * modifier;
-      if(a[this.currentSort] > b[this.currentSort]) return 1 * modifier;
-      return 0;
-    });
   }
-}
 };
 </script>
 
