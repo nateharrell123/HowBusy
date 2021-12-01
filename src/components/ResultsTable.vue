@@ -88,6 +88,7 @@ export default {
           console.log(error);
         });
     },
+    // edit here:
     editReply(place, index) {
       this.selectedItem = index;
       this.item = place.place_id;
