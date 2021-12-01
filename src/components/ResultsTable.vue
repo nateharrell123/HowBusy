@@ -91,7 +91,7 @@ export default {
     editReply(place, index) {
       this.selectedItem = index;
       this.item = place.place_id;
-      console.log(`Editing ${this.item}`)
+      console.log(`Editing ${this.item}, index is ${this.selectedItem}`)
     }
   }
 };
