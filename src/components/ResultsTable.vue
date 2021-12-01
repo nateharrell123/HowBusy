@@ -5,19 +5,20 @@
         <tr>
           <th @click="sort('Establishment')">Establishment</th>
           <th></th>
-          <th>Busy-ness</th>
+          <th> Busy-ness</th>
           <th> Hours </th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="place in SearchResults" :key="place.id">
+        <tr v-for="place, index in SearchResults" :key="place.id">
           <td>{{ place.name }}
             <br>
             <span class="placeAddressText"> {{place.vicinity}} </span>
           </td>
           <!-- <td v-for="item in place.photos" :key="item.id"> {{ getPhoto(item.photo_reference) }} </td> -->
           <td> Picture goes here </td>
-          <td><button class="findBusyButton" @click="howBusyClick(place.place_id)"> Click to find busy-ness </button></td>
+          <!-- <td><button class="findBusyButton" @click="howBusyClick(place.place_id)"> Click to find busy-ness </button></td> -->
+          <td> <button @click="editReply(place, index)"> Hello there! </button></td>
           <td v-for="place in place.opening_hours" :key="place.id" class="openText">
             {{openStatus(place)}}
           </td>
@@ -39,9 +40,8 @@ export default {
       Clock : Clock,
       name: "ResultsTable",
       searchResults: [],
-      currentSort:'name',
-      currentSortDir:'asc',
-      editing : false,
+      item:'',
+      selectedItem: null,
     };
   },
   mounted() {
@@ -77,15 +77,21 @@ export default {
           place : place_id
         }
       };
-      //let self = this;
+      let self = this;
       axios(config)
         .then(function (response) {
           console.log(JSON.stringify(response.data))
+          self.id = place_id
+          console.log(self.id)
         })
         .catch(function (error) {
           console.log(error);
         });
     },
+    editReply(item, index) {
+      this.selectedItem = index;
+      this.item = item.name;
+    }
   }
 };
 </script>
