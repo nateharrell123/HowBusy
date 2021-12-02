@@ -3,24 +3,25 @@
     <div class="links">
     </div>
         <div class="black">
-            <h3 class="description-header">
-
-        <div class="github">
+            <div class="one">
+                <h3 class="description-header">
+                    Waiting stinks, am I right?
+                </h3>
+                <p class="description-text">
+                    If only there was a quick and easy way to find out how busy nearby establishments are, without having to call first. 
+                    <br>
+                    <br>
+                    Lucky for you, <strong>HowBusy.com</strong> does just that.
+                    <br>
+                    <br>
+                    It works by using the <code> Google Places API & Javascript Maps API</code> to scout out nearby businesses, then the <code> Popular-Times </code>
+                    Python library to scrape <i> live </i>, real-time attendance for any establishment. 
+                </p>
+            </div>
+        <div class="two">
             <a href="https://github.com/nateharrell123/csproject">  Star on GitHub </a>
             <img :src="require('/Users/nateharrell/Documents/csproject/src/assets/github.png')"/>
         </div>
-                Waiting stinks, am I right?
-            </h3>
-            <p class="description-text">
-                If only there was a quick and easy way to find out how busy nearby establishments are, without having to call first. 
-                <br>
-                <br>
-                Lucky for you, <strong>HowBusy.com</strong> does just that.
-                <br>
-                <br>
-                It works by using the <code> Google Places API & Javascript Maps API</code> to scout out nearby businesses, then the <code> Popular-Times </code>
-                Python library to scrape <i> live </i>, real-time attendance for any establishment. 
-            </p>
         </div>
 </footer>
 </template>
@@ -49,8 +50,13 @@ export default {
     padding: 30px 10px 20px;
     margin: auto;
 }
-.github{
-
+.one{
+width: 15%;
+  height: 200px;
+}
+.two{
+      margin-left: 15%;
+  height: 200px;
 }
 .description-text{
     font-size: 1.2rem;
