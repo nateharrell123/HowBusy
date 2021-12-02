@@ -10,15 +10,17 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="place, index in SearchResults" :key="place.id">
+        <tr v-for="place in SearchResults" :key="place.id">
           <td>{{ place.name }}
             <br>
             <span class="placeAddressText"> {{place.vicinity}} </span>
           </td>
           <!-- <td v-for="item in place.photos" :key="item.id"> {{ getPhoto(item.photo_reference) }} </td> -->
           <td> Picture goes here </td>
-          <!-- <td><button class="findBusyButton" @click="howBusyClick(place.place_id)"> Click to find busy-ness </button></td> -->
-          <td> <button @click="editReply(place, index)"> Hello there! </button></td>
+          <td><button class="findBusyButton" @click="howBusyClick(place.place_id, place)"> Click to find busy-ness:
+             <br> <span class="busyText"> {{place.busyness}} </span> </button>
+          </td>
+          <!-- <td> <button @click="editReply(place, index)"> Hello there! {{place.busyness}} </button></td> -->
           <td v-for="place in place.opening_hours" :key="place.id" class="openText">
             {{openStatus(place)}}
           </td>
@@ -67,7 +69,7 @@ export default {
       }
       else return 'Closed.'
     },
-    howBusyClick(place_id){
+    howBusyClick(place_id, plc){
       console.log(place_id)
       var axios = require("axios");
       var config = {
@@ -77,12 +79,12 @@ export default {
           place : place_id
         }
       };
-      let self = this;
+      //let self = this;
       axios(config)
         .then(function (response) {
           console.log(JSON.stringify(response.data))
-          self.id = place_id
-          console.log(self.id)
+          //self.id = place_id
+          plc.busyness = response.data
         })
         .catch(function (error) {
           console.log(error);
