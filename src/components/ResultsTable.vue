@@ -19,7 +19,7 @@
           <td> Picture goes here </td>
           <td><button class="findBusyButton" @click="howBusyClick(place.place_id, place)">
              <span :class="{placeClicked: place.clicked}">Click to find busy-ness: </span>
-             <br> <span 
+             <br :class="{placeClicked: place.clicked}"> <span 
              :class="{ busyTextGreen: place.isGreen,
              busyTextOrange: place.isOrange,
              busyTextRed: place.isRed}"
