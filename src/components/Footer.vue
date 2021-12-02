@@ -20,7 +20,7 @@
             </div>
         <div class="two">
             <img :src="require('/Users/nateharrell/Documents/csproject/src/assets/github.png')"/>
-            <a href="https://github.com/nateharrell123/csproject">  Star on GitHub </a>
+            <button class="pretty">  Star on GitHub </button>
         </div>
         </div>
 </footer>
@@ -37,6 +37,22 @@ export default {
     background: #32363b;
     width : 100%;
     padding:100px 0px 0px;
+}
+.pretty{
+    font-size: .8rem;
+    cursor: pointer;
+    margin-top: 10px;
+    border: 2px solid #b6bbc1;
+    background: transparent;
+    border-radius: 10px;
+    padding: 6.66667px 10px;
+    display: block;
+    transition: background .2s;
+    color: #b6bbc1;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 10px;
+    font-weight: 600;
 }
 .description-header{
     font-size: 1.5rem;
