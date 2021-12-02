@@ -4,6 +4,11 @@
     </div>
         <div class="black">
             <h3 class="description-header">
+
+        <div class="github">
+            <a href="https://github.com/nateharrell123/csproject">  Star on GitHub </a>
+            <img :src="require('/Users/nateharrell/Documents/csproject/src/assets/github.png')"/>
+        </div>
                 Waiting stinks, am I right?
             </h3>
             <p class="description-text">
@@ -16,11 +21,6 @@
                 It works by using the <code> Google Places API & Javascript Maps API</code> to scout out nearby businesses, then the <code> Popular-Times </code>
                 Python library to scrape <i> live </i>, real-time attendance for any establishment. 
             </p>
-
-        <div class="github">
-            <a href="https://github.com/nateharrell123/csproject">  Star on GitHub </a>
-            <img src="/Users/nateharrell/Documents/csproject/src/assets/github.png"/>
-        </div>
         </div>
 </footer>
 </template>
