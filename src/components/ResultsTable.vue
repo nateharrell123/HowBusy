@@ -19,7 +19,12 @@
           <td> Picture goes here </td>
           <td><button class="findBusyButton" @click="howBusyClick(place.place_id, place)">
              Click to find busy-ness:
-             <br> <span class="busyText"> {{place.busyness}} </span> 
+             <br> <span 
+             :class="{ busyTextGreen: place.isGreen,
+             busyTextRed: place.isRed}"
+             > 
+             {{place.busyness}} 
+             </span> 
              <br> <span class="placeAddressText"> {{place.desc}} </span>
              </button>
           </td>
@@ -88,9 +93,19 @@ export default {
           console.log(JSON.stringify(response.data))
           //self.id = place_id
           plc.busyness = response.data
-          if (plc.busyness === "Moderately busy" || plc.busyness === "Usually moderately busy")
+          if (plc.busyness === "A little busy" || plc.busyness === "Usually moderately busy")
           {
             plc.desc = "Usually 15-20 min. wait"
+            plc.isGreen = true;
+          }
+          else if (plc.busyness === "Very busy")
+          {
+            plc.desc = "Usually asdf"
+            plc.isRed = true;
+          }
+          else 
+          {
+            plc.className = "busyTextRed"
           }
         })
         .catch(function (error) {
@@ -122,9 +137,13 @@ export default {
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
 }
-.busyText{
+.busyTextGreen{
   font-weight: bolder;
   color: green;
+}
+.busyTextRed{
+  font-weight: bolder;
+  color: red;
 }
 .findBusyButton{
   border:none;
