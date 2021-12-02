@@ -88,6 +88,7 @@ export default {
         })
         .catch(function (error) {
           console.log(error);
+          plc.busyness = "No population data for this establishment."
         });
     },
     // edit here:
@@ -114,7 +115,9 @@ export default {
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
 }
-.openText{
+.busyText{
+  font-weight: bold;
+  color: green;
 }
 .findBusyButton{
   border:none;
