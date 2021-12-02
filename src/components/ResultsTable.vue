@@ -112,6 +112,7 @@ export default {
         })
         .catch(function (error) {
           console.log(error);
+          plc.clicked = true;
           plc.busyness = "No population data for this establishment."
         });
     },
