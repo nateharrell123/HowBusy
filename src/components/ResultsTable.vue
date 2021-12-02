@@ -21,6 +21,7 @@
              Click to find busy-ness:
              <br> <span 
              :class="{ busyTextGreen: place.isGreen,
+             busyTextOrange: place.isOrange,
              busyTextRed: place.isRed}"
              > 
              {{place.busyness}} 
@@ -98,14 +99,14 @@ export default {
             plc.desc = "Usually 15-20 min. wait"
             plc.isGreen = true;
           }
+          else if (plc.busyness === "Moderately busy")
+          {
+            plc.isOrange = true;
+          }
           else if (plc.busyness === "Very busy")
           {
             plc.desc = "Usually asdf"
             plc.isRed = true;
-          }
-          else 
-          {
-            plc.className = "busyTextRed"
           }
         })
         .catch(function (error) {
@@ -144,6 +145,10 @@ export default {
 .busyTextRed{
   font-weight: bolder;
   color: red;
+}
+.busyTextOrange{
+  font-weight: bolder;
+  color: orange;
 }
 .findBusyButton{
   border:none;
