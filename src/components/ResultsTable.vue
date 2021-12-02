@@ -18,7 +18,7 @@
           <!-- <td v-for="item in place.photos" :key="item.id"> {{ getPhoto(item.photo_reference) }} </td> -->
           <td> Picture goes here </td>
           <td><button class="findBusyButton" @click="howBusyClick(place.place_id, place)">
-             Click to find busy-ness:
+             <span :class="{placeClicked: place.clicked}">Click to find busy-ness: </span>
              <br> <span 
              :class="{ busyTextGreen: place.isGreen,
              busyTextOrange: place.isOrange,
@@ -94,6 +94,7 @@ export default {
           console.log(JSON.stringify(response.data))
           //self.id = place_id
           plc.busyness = response.data
+          plc.clicked = true;
           if (plc.busyness === "A little busy" || plc.busyness === "Usually moderately busy")
           {
             plc.desc = "Usually 15-20 min. wait"
@@ -149,6 +150,9 @@ export default {
 .busyTextOrange{
   font-weight: bolder;
   color: orange;
+}
+.placeClicked{
+  display: none;
 }
 .findBusyButton{
   border:none;
