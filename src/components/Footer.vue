@@ -51,11 +51,11 @@ export default {
     margin: auto;
 }
 .one{
-width: 15%;
+width: 100%;
   height: 200px;
 }
 .two{
-      margin-left: 15%;
+  margin-right: 15%;
   height: 200px;
 }
 .description-text{
