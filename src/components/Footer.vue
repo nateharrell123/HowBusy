@@ -19,8 +19,8 @@
                 </p>
             </div>
         <div class="two">
-            <a href="https://github.com/nateharrell123/csproject">  Star on GitHub </a>
             <img :src="require('/Users/nateharrell/Documents/csproject/src/assets/github.png')"/>
+            <a href="https://github.com/nateharrell123/csproject">  Star on GitHub </a>
         </div>
         </div>
 </footer>
@@ -51,12 +51,15 @@ export default {
     margin: auto;
 }
 .one{
-width: 100%;
-  height: 200px;
+    font-size: .8rem;
+    color: #9aa1aa;
+    flex-basis: 66%;
 }
 .two{
-  margin-right: 15%;
-  height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 33%;
 }
 .description-text{
     font-size: 1.2rem;
