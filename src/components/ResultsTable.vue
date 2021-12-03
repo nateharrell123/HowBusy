@@ -4,7 +4,7 @@
       <thead>
         <tr>
           <th @click="sort('Establishment')">Establishment</th>
-          <th></th>
+          <!-- <th></th> -->
           <th> Busy-ness</th>
           <th> Hours </th>
         </tr>
@@ -16,7 +16,7 @@
             <span class="placeAddressText"> {{place.vicinity}} </span>
           </td>
           <!-- <td v-for="item in place.photos" :key="item.id"> {{ getPhoto(item.photo_reference) }} </td> -->
-          <td> Picture goes here </td>
+          <!-- <td> Picture goes here </td> -->
           <td>
             <button class="findBusyButton" @click="howBusyClick(place.place_id, place)">
              <span :class="{placeClicked: place.clicked}">Click to find busy-ness: </span>
