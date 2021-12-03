@@ -32,7 +32,7 @@
         <option value="restaurant">Restaurants</option>
         <option value="bar">Bars</option>
         <option value="department_store">Grocery/Shopping</option>
-
+        <option value="movie_theater">Movie Theatres</option>
       </select>
     </div>
   </div>

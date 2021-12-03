@@ -19,12 +19,16 @@
           <td> Picture goes here </td>
           <td><button class="findBusyButton" @click="howBusyClick(place.place_id, place)">
              <span :class="{placeClicked: place.clicked}">Click to find busy-ness: </span>
-             <br :class="{placeClicked: place.clicked}"> <span 
-             :class="{ busyTextGreen: place.isGreen,
-             busyTextYellow: place.isYellow,
-             busyTextOrange: place.isOrange,
-             busyTextDarkOrange : place.isDarkOrange,
-             busyTextRed: place.isRed}"
+             <br :class="{placeClicked: place.clicked}"> 
+             <span 
+              :class="
+              { 
+                busyTextGreen: place.isGreen,
+                busyTextYellow: place.isYellow,
+                busyTextOrange: place.isOrange,
+                busyTextDarkOrange : place.isDarkOrange,
+                busyTextRed: place.isRed
+              }"
              > 
              {{place.busyness}} 
              </span> 
@@ -75,13 +79,15 @@ export default {
         });
     },
     openStatus(status){ // display actual hours later on
+      if (status == null){
+        return 'Unknown hours of operation.'
+      }
       if (status === true){
         return 'Open now!'
       }
       else return 'Closed.'
     },
     howBusyClick(place_id, plc){
-      console.log(place_id)
       var axios = require("axios");
       var config = {
         method: "post",
@@ -103,12 +109,12 @@ export default {
           }
           else if (plc.busyness === "A little busy.")
           {
-            plc.desc = "Usually 15-20 min. wait."
+            plc.desc = "Usually 5-10 min. wait."
             plc.isYellow = true;
           }
           else if (plc.busyness === "Moderately busy.")
           {
-            plc.desc = "Usually 20-30 min. wait."
+            plc.desc = "Usually 10-20 min. wait."
             plc.isOrange = true;
           }
           else if (plc.busyness === "Very busy.")
@@ -125,6 +131,7 @@ export default {
         .catch(function (error) {
           console.log(error);
           plc.clicked = true;
+          plc.isRed = true;
           plc.busyness = "No population data for this establishment."
         });
     },
@@ -157,7 +164,7 @@ export default {
 }
 .busyTextYellow{
   font-weight: bolder;
-  color: yellow;
+  color: #FFC300;
 }
 .busyTextRed{
   font-weight: bolder;
@@ -179,6 +186,7 @@ export default {
   background-color:inherit;
   font-size:1.3rem;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+
 }
 .findBusyButton:hover{background: #eee;}
 .placeAddressText{
