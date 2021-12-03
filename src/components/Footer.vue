@@ -51,8 +51,11 @@ export default {
     color: #b6bbc1;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 600;
+}
+button:hover{
+     background: steelblue;
 }
 .description-header{
     font-size: 1.5rem;
