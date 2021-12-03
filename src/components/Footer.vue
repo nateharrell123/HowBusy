@@ -20,7 +20,7 @@
             </div>
         <div class="two">
             <img :src="require('/Users/nateharrell/Documents/csproject/src/assets/github.png')"/>
-            <button class="pretty">  Star on GitHub </button>
+            <button class="pretty" @click="toGit()">  Star on GitHub </button>
         </div>
         </div>
 </footer>
@@ -28,7 +28,12 @@
 
 <script>
 export default {
-    name : "Footer"
+    name : "Footer",
+    methods : {
+        toGit(){
+            window.open('https://github.com/nateharrell123/csproject')
+        }
+    }
 }
 </script>
 
