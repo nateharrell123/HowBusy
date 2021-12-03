@@ -21,7 +21,9 @@
              <span :class="{placeClicked: place.clicked}">Click to find busy-ness: </span>
              <br :class="{placeClicked: place.clicked}"> <span 
              :class="{ busyTextGreen: place.isGreen,
+             busyTextYellow: place.isYellow,
              busyTextOrange: place.isOrange,
+             busyTextDarkOrange : place.isDarkOrange,
              busyTextRed: place.isRed}"
              > 
              {{place.busyness}} 
@@ -91,22 +93,32 @@ export default {
       //let self = this;
       axios(config)
         .then(function (response) {
-          console.log(JSON.stringify(response.data))
-          //self.id = place_id
           plc.busyness = response.data
           plc.clicked = true;
-          if (plc.busyness === "A little busy" || plc.busyness === "Usually moderately busy")
+
+          if (plc.busyness === "Not busy.")
           {
-            plc.desc = "Usually 15-20 min. wait"
+            plc.desc = "Usually no wait."
             plc.isGreen = true;
           }
-          else if (plc.busyness === "Moderately busy")
+          else if (plc.busyness === "A little busy.")
           {
+            plc.desc = "Usually 15-20 min. wait."
+            plc.isYellow = true;
+          }
+          else if (plc.busyness === "Moderately busy.")
+          {
+            plc.desc = "Usually 20-30 min. wait."
             plc.isOrange = true;
           }
-          else if (plc.busyness === "Very busy")
+          else if (plc.busyness === "Very busy.")
           {
-            plc.desc = "Usually asdf"
+            plc.desc = "Usually 30-45 min. wait."
+            plc.isDarkOrange = true;
+          }
+          else if (plc.busyness === "Extremely busy")
+          {
+            plc.desc = "Usually 1+ hour wait."
             plc.isRed = true;
           }
         })
@@ -120,7 +132,6 @@ export default {
     editReply(place, index) {
       this.selectedItem = index;
       this.item = place.place_id;
-      console.log(`Editing ${this.item}, index is ${this.selectedItem}`)
     }
   }
 };
@@ -144,6 +155,10 @@ export default {
   font-weight: bolder;
   color: green;
 }
+.busyTextYellow{
+  font-weight: bolder;
+  color: yellow;
+}
 .busyTextRed{
   font-weight: bolder;
   color: red;
@@ -151,6 +166,10 @@ export default {
 .busyTextOrange{
   font-weight: bolder;
   color: orange;
+}
+.busyTextDarkOrange{
+  font-weight:bolder;
+  color: #FF5500;
 }
 .placeClicked{
   display: none;
