@@ -1,6 +1,6 @@
 <template>
     <div>
-        {{this.SpecificData.name}}
+        {{this.SpecificData}}
     </div>
 </template>
 
