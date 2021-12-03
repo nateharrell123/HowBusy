@@ -36,7 +36,7 @@
                         </button>
                     </td>
                     <td>
-                        {{openStatus(this.SpecificData)}}
+                        {{openStatus(this.SpecificData.opening_hours)}}
                     </td>
                 </tr>
             </tbody>
