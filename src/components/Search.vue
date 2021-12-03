@@ -129,8 +129,14 @@ export default {
           console.log(JSON.stringify(response.data));
           
           self.places = response.data.results;
-          self.nearbyIsLoaded = true;
-          self.specificIsLoaded = false;
+          if (self.isSpecificSearch)
+          {
+            self.specificIsLoaded = true;
+          }
+          else if (self.isRadiusSearch)
+          {
+            self.nearbyIsLoaded = true;
+          }
         })
         .catch(function (error) {
           console.log(error);

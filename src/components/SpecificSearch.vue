@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="results">
         <table class="content-table">
             <thead>
                 <tr>
@@ -117,6 +117,9 @@ export default {
 </script>
 
 <style>
+.results{
+  text-align: -webkit-center;
+}
 .content-table {
   border-collapse: collapse;
   margin: 25px 0;
