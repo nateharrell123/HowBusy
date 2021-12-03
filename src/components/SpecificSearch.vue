@@ -36,7 +36,7 @@
                         </button>
                     </td>
                     <td>
-                        {{openStatus(this.SpecificData.opening_hours)}}
+                        {{openStatus(this.SpecificData.opening_hours)}} <!-- find hours -->
                     </td>
                 </tr>
             </tbody>
