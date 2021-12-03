@@ -17,7 +17,8 @@
           </td>
           <!-- <td v-for="item in place.photos" :key="item.id"> {{ getPhoto(item.photo_reference) }} </td> -->
           <td> Picture goes here </td>
-          <td><button class="findBusyButton" @click="howBusyClick(place.place_id, place)">
+          <td>
+            <button class="findBusyButton" @click="howBusyClick(place.place_id, place)">
              <span :class="{placeClicked: place.clicked}">Click to find busy-ness: </span>
              <br :class="{placeClicked: place.clicked}"> 
              <span 
