@@ -20,6 +20,8 @@
           <td>
             <button class="findBusyButton" @click="howBusyClick(place.place_id, place)">
              <span :class="{placeClicked: place.clicked}">Click to find busy-ness: </span>
+             <!-- <span class="loader" v-if="place.clicked"></span> -->
+
              <br :class="{placeClicked: place.clicked}"> 
              <span 
               :class="
@@ -102,6 +104,7 @@ export default {
         .then(function (response) {
           plc.busyness = response.data
           plc.clicked = true;
+          plc.done = true;
 
           if (plc.busyness === "Not busy.")
           {
@@ -158,6 +161,18 @@ export default {
   border-radius: 5px 5px 0 0;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+}
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 .busyTextGreen{
   font-weight: bolder;

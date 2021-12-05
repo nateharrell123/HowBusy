@@ -86,22 +86,22 @@ export default {
           }
           else if (plc.busyness === "A little busy.")
           {
-            plc.desc = "Usually 5-10 min. wait."
+            plc.desc = "Expect small crowds."
             plc.isYellow = true;
           }
           else if (plc.busyness === "Moderately busy.")
           {
-            plc.desc = "Usually 10-20 min. wait."
+            plc.desc = "Expect moderate crowds."
             plc.isOrange = true;
           }
           else if (plc.busyness === "Very busy.")
           {
-            plc.desc = "Usually 30-45 min. wait."
+            plc.desc = "Expect it to be very packed."
             plc.isDarkOrange = true;
           }
-          else if (plc.busyness === "Extremely busy")
+          else if (plc.busyness === "Extremely busy.")
           {
-            plc.desc = "Usually 1+ hour wait."
+            plc.desc = "As busy as it gets."
             plc.isRed = true;
           }
         })
