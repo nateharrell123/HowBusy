@@ -51,14 +51,14 @@
     <div class="centeredRadiusSearch">
       <SpecificSearch
       :SpecificData="specificData"
-      v-show="specificIsLoaded"
+      v-if="specificIsLoaded"
       />
     </div>
 
     <div class="results">
       <ResultsTable
       :SearchResults="places"
-      v-show="nearbyIsLoaded"
+      v-if="nearbyIsLoaded"
       />
     </div>
 
@@ -115,9 +115,11 @@ export default {
     setPlace(placeResultData){ // gross
       this.specificData = placeResultData
       this.specificIsLoaded = !this.specificIsLoaded
-      this.nearbyIsLoaded = !this.nearbyIsLoaded
+      this.nearbyIsLoaded = false
     },
     findNearby() {
+      this.specificIsLoaded = false;
+      
       var axios = require("axios");
       var config = {
         method: "get",
