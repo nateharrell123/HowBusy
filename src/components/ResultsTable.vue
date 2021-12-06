@@ -94,7 +94,7 @@ export default {
       var axios = require("axios");
       var config = {
         method: "post",
-        url: `http://127.0.0.1:5000/test`,
+        url: `http://127.0.0.1:5000/GetBusy`,
         params: {
           place : place_id
         }
