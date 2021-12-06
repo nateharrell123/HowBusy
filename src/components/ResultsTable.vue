@@ -123,7 +123,7 @@ export default {
           }
           else if (plc.busyness === "Very busy.")
           {
-            plc.desc = "Expect it to be very packed."
+            plc.desc = "Expect bigger crowds."
             plc.isDarkOrange = true;
           }
           else if (plc.busyness === "Extremely busy.")
