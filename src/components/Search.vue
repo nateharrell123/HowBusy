@@ -65,9 +65,8 @@
 </template>
 
 <script>
-import SpecificSearch from "/Users/nateharrell/Documents/csproject/src/components/SpecificSearch.vue";
-//import ResultsTable from "./components/ResultsTable.vue";
-import ResultsTable from "/Users/nateharrell/Documents/csproject/src/components/ResultsTable.vue" // idk
+import SpecificSearch from "./SpecificSearch.vue";
+import ResultsTable from "./ResultsTable.vue";
 export default {
   data() {
     return {

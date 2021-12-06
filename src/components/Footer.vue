@@ -19,7 +19,7 @@
                 </p>
             </div>
         <div class="two">
-            <img :src="require('/Users/nateharrell/Documents/csproject/src/assets/github.png')"/>
+            <img :src="require('../assets/github.png')"/>
             <button class="pretty" @click="toGit()">  Star on GitHub </button>
         </div>
         </div>
