@@ -36,12 +36,13 @@
                         </button>
                     </td>
                     <td>
-                        {{openStatus(this.SpecificData.opening_hours)}} <!-- find hours -->
+                      {{openStatus(SpecificData.opening_hours.open_now)}}
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
+
 </template>
 
 <script>
@@ -56,7 +57,7 @@ export default {
     },
     methods : {
     openStatus(status){ // display actual hours later on
-      if (status == null){
+      if (status === null){
         return 'Unknown hours of operation.'
       }
       if (status === true){

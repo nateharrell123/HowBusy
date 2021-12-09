@@ -82,7 +82,7 @@ export default {
         });
     },
     openStatus(status){ // display actual hours later on
-      if (status == null){
+      if (status === null){
         return 'Unknown hours of operation.'
       }
       if (status === true){
