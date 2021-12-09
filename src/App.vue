@@ -7,6 +7,7 @@
   </div>
 </div>
     <Footer class="foot"/>
+    <!-- commit -->
 </template>
 
 <script>
