@@ -1,4 +1,6 @@
 <template>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
   <div>
     <table class="content-table">
       <thead>
