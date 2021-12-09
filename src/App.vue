@@ -20,7 +20,7 @@ export default {
     Clock,
     Search,
     Footer,
-    // Loader
+    // Loader sdf
   },
 };
 </script>
