@@ -1,6 +1,4 @@
 <template>
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-
   <div>
     <table class="content-table">
       <thead>
@@ -73,7 +71,7 @@ export default {
       var axios = require("axios");
       var config = {
         method: "get",
-        url: `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${photo_reference}&key=AIzaSyDASvg4ATeMQcAsocmem5kFdTMDw_NSJwo`
+        url: `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${photo_reference}&key=AIzaSyDASvg4ATeMQcAsocmem5kFdTMDw_NSJwo`
       };
       axios(config)
         .then(response => {
