@@ -14,8 +14,9 @@
                     Lucky for you, <strong>HowBusy.com</strong> does just that.
                     <br>
                     <br>
-                    It works by using the <code> Google Places API & Javascript Maps API</code> to scout out nearby businesses, then the <code> Popular-Times </code>
-                    Python library to scrape <i> live </i>, real-time attendance for any establishment. 
+                    It works by using the <code> Google Places API & Javascript Maps API</code> to scout out nearby businesses, then the 
+                    <code> Popular-Times Python library  </code>
+                    to scrape <i> live </i>, real-time attendance for any establishment. 
                 </p>
             </div>
         <div class="two">
