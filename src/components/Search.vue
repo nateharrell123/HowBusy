@@ -122,9 +122,6 @@ export default {
       
       var axios = require("axios");
       var config = {
-        headers: {
-            'Access-Control-Allow-Origin' : '*',
-        },
         method: "get",
         url: `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${this.coordinates.lat},${this.coordinates.lng}&radius=${this.radius * 1000}&type=${this.nearbyFilterType}&key=AIzaSyDASvg4ATeMQcAsocmem5kFdTMDw_NSJwo`,
       };
