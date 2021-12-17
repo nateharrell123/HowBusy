@@ -38,7 +38,7 @@
     </div>
   </div>
   
-    <div class="centeredRadiusSearch">
+    <!-- <div class="centeredRadiusSearch">
       <GMapAutocomplete
       style="width: 600px;"
       v-show="isSpecificSearch"
@@ -47,7 +47,7 @@
       @place_changed="setPlace"
       placeholder="Search for a place: "
       ></GMapAutocomplete>
-    </div>
+    </div> -->
 
     <div class="centeredRadiusSearch">
       <SpecificSearch
@@ -104,8 +104,8 @@ export default {
 
   mounted : function (){
     this.grabLocation()
-    var element = document.getElementById("specificSearch");
-    element.addEventListener("blur", function() { this.findNearby()});
+    //var element = document.getElementById("specificSearch");
+    //element.addEventListener("blur", function() { this.findNearby()});
 
       let recaptchaScript = document.createElement('script')
       recaptchaScript.setAttribute('src', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDASvg4ATeMQcAsocmem5kFdTMDw_NSJwo&libraries=places')
@@ -136,7 +136,7 @@ export default {
       let service;
       //let infowindow;
 
-      var pyrmont = new VueGoogleMaps.gmapApi.maps.LatLng(-33.8665433,151.1956316);
+      var pyrmont = new VueGoogleMaps.gmapApi.maps.LatLng(this.coordinates.lat, this.coordinates.lng);
 
       map = new VueGoogleMaps.gmapApi.maps.Map(document.getElementById('map'), {
           center: pyrmont,
@@ -145,8 +145,8 @@ export default {
 
       var request = {
         location: pyrmont,
-        radius: '500',
-        type: ['restaurant']
+        radius: this.radius,
+        type: this.nearbyFilterType
       };
 
       service = new VueGoogleMaps.gmapApi.maps.places.PlacesService(map);
