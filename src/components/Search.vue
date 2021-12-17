@@ -70,6 +70,9 @@
       />
     </div>
 
+
+    <div id="map"></div> <!-- idk -->
+
 </template>
 
 <script>
@@ -107,9 +110,9 @@ export default {
     //var element = document.getElementById("specificSearch");
     //element.addEventListener("blur", function() { this.findNearby()});
 
-      let recaptchaScript = document.createElement('script')
-      recaptchaScript.setAttribute('src', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDASvg4ATeMQcAsocmem5kFdTMDw_NSJwo&libraries=places')
-      document.head.appendChild(recaptchaScript)
+      // let recaptchaScript = document.createElement('script')
+      // recaptchaScript.setAttribute('src', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDASvg4ATeMQcAsocmem5kFdTMDw_NSJwo&libraries=places')
+      // document.head.appendChild(recaptchaScript)
   },
 
   /* Functions */
@@ -137,6 +140,8 @@ export default {
       //let infowindow;
 
       var pyrmont = new VueGoogleMaps.gmapApi.maps.LatLng(this.coordinates.lat, this.coordinates.lng);
+
+      console.log(pyrmont)
 
       map = new VueGoogleMaps.gmapApi.maps.Map(document.getElementById('map'), {
           center: pyrmont,
@@ -222,7 +227,7 @@ export default {
 
 <style scoped>
 
-.hide{
+.hide, map{
   display:none;
 }
 .radiusSearch{
