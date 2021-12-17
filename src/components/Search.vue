@@ -1,4 +1,10 @@
 <template>
+    <!-- <svg class="searchIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
+    fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+    v-show="isRadiusSearch">
+    <circle cx="11" cy="11" r="8"></circle>
+    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg> -->
   <div class="selectField">
     <select class="selectClass" v-model="searchType" @change="selectChanged($event)">
       <option value="" disabled selected>Choose a search method:</option>
@@ -6,13 +12,8 @@
       <option value="SearchSpecific">Search specific</option>
     </select>
   </div>
+
   <div class="centeredRadiusSearch">
-    <!-- <svg class="searchIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
-    fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-    v-show="isRadiusSearch">
-    <circle cx="11" cy="11" r="8"></circle>
-    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-    </svg> -->
     <div class="radiusDiv">
       <input style="width: 407px;"
       v-show="isRadiusSearch"
@@ -55,6 +56,13 @@
       />
     </div>
 
+    <GMapMap
+    class="hide"
+      :center="{lat: 51.093048, lng: 6.842120}"
+      :zoom="7"
+      :disableDefaultUI="true"
+    />
+
     <div class="results">
       <ResultsTable
       :SearchResults="places"
@@ -67,6 +75,8 @@
 <script>
 import SpecificSearch from "./SpecificSearch.vue";
 import ResultsTable from "./ResultsTable.vue";
+import VueGoogleMaps from '@fawmi/vue-google-maps'
+
 export default {
   data() {
     return {
@@ -96,6 +106,10 @@ export default {
     this.grabLocation()
     var element = document.getElementById("specificSearch");
     element.addEventListener("blur", function() { this.findNearby()});
+
+      let recaptchaScript = document.createElement('script')
+      recaptchaScript.setAttribute('src', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDASvg4ATeMQcAsocmem5kFdTMDw_NSJwo&libraries=places')
+      document.head.appendChild(recaptchaScript)
   },
 
   /* Functions */
@@ -117,35 +131,73 @@ export default {
       this.nearbyIsLoaded = false
     },
     findNearby() {
-      //const cors = require('cors');
-      this.specificIsLoaded = false;
-      
-      var axios = require("axios");
-      var config = {
-        headers: {
-            'Access-Control-Allow-Origin' : '*',
-        },
-        method: "get",
-        url: `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${this.coordinates.lat},${this.coordinates.lng}&radius=${this.radius * 1000}&type=${this.nearbyFilterType}&key=AIzaSyDASvg4ATeMQcAsocmem5kFdTMDw_NSJwo`,
-      };
-      let self = this; // strange :P
-      axios(config)
-        .then(function (response) {
-          console.log(JSON.stringify(response.data));
-          
-          self.places = response.data.results;
-          if (self.isSpecificSearch)
-          {
-            self.specificIsLoaded = true;
-          }
-          else if (self.isRadiusSearch)
-          {
-            self.nearbyIsLoaded = true;
-          }
-        })
-        .catch(function (error) {
-          console.log(error);
+
+      let map;
+      let service;
+      //let infowindow;
+
+      var pyrmont = new VueGoogleMaps.gmapApi.maps.LatLng(-33.8665433,151.1956316);
+
+      map = new VueGoogleMaps.gmapApi.maps.Map(document.getElementById('map'), {
+          center: pyrmont,
+          zoom: 15
         });
+
+      var request = {
+        location: pyrmont,
+        radius: '500',
+        type: ['restaurant']
+      };
+
+      service = new VueGoogleMaps.gmapApi.maps.places.PlacesService(map);
+      service.nearbySearch(request, this.callback);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // this.specificIsLoaded = false;
+      
+      // var axios = require("axios");
+      // var config = {
+      //   method: "get",
+      //   url: `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${this.coordinates.lat},${this.coordinates.lng}&radius=${this.radius * 1000}&type=${this.nearbyFilterType}&key=AIzaSyDASvg4ATeMQcAsocmem5kFdTMDw_NSJwo`,
+      // };
+      // let self = this; // strange :P
+      // axios(config)
+      //   .then(function (response) {
+      //     console.log(JSON.stringify(response.data));
+          
+      //     self.places = response.data.results;
+      //     if (self.isSpecificSearch)
+      //     {
+      //       self.specificIsLoaded = true;
+      //     }
+      //     else if (self.isRadiusSearch)
+      //     {
+      //       self.nearbyIsLoaded = true;
+      //     }
+      //   })
+      //   .catch(function (error) {
+      //     console.log(error);
+      //   });
+    },
+    callback(results, status){
+      if (status == VueGoogleMaps.gmapApi.maps.places.PlacesServiceStatus.OK) {
+        this.places = results
+      }
     },
     selectChanged(){
         if (event.target.value === "SearchSpecific")
@@ -169,6 +221,10 @@ export default {
 </script>
 
 <style scoped>
+
+.hide{
+  display:none;
+}
 .radiusSearch{
   margin-top:10px;
   font-size: 1.5rem;
