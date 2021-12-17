@@ -134,6 +134,7 @@ export default {
       this.nearbyIsLoaded = false
     },
     findNearby() {
+      console.log("hello")
 
       let map;
       let service;
