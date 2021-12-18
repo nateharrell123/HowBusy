@@ -58,7 +58,8 @@
 
     <GMapMap
     class="hide"
-      :center="{lat: 51.093048, lng: 6.842120}"
+    id = "map"
+      :center="{lat: this.coordinates.lat, lng: this.coordinates.lng}"
       :zoom="7"
       :disableDefaultUI="true"
     />
@@ -69,9 +70,6 @@
       v-if="nearbyIsLoaded"
       />
     </div>
-
-
-    <div id="map"></div> <!-- idk -->
 
 </template>
 
@@ -96,7 +94,8 @@ export default {
       isRadiusSearch : false,
       isSpecificSearch : false,
       searchType: "",
-      specificData : {}
+      specificData : {},
+      gmap: {}
     }
   },
 
@@ -107,12 +106,12 @@ export default {
 
   mounted : function (){
     this.grabLocation()
+    //this.map = new VueGoogleMaps.gmapApi.maps.LatLng(this.coordinates.lat, this.coordinates.lng);
+
     //var element = document.getElementById("specificSearch");
     //element.addEventListener("blur", function() { this.findNearby()});
 
-      // let recaptchaScript = document.createElement('script')
-      // recaptchaScript.setAttribute('src', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDASvg4ATeMQcAsocmem5kFdTMDw_NSJwo&libraries=places')
-      // document.head.appendChild(recaptchaScript)
+
   },
 
   /* Functions */
@@ -140,22 +139,15 @@ export default {
       let service;
       //let infowindow;
 
-      var pyrmont = new VueGoogleMaps.gmapApi.maps.LatLng(this.coordinates.lat, this.coordinates.lng);
-
-      console.log(pyrmont)
-
-      map = new VueGoogleMaps.gmapApi.maps.Map(document.getElementById('map'), {
-          center: pyrmont,
-          zoom: 15
-        });
+      map = document.getElementById("map")
 
       var request = {
-        location: pyrmont,
+        location: this.coordinates, // map
         radius: this.radius,
         type: this.nearbyFilterType
       };
 
-      service = new VueGoogleMaps.gmapApi.maps.places.PlacesService(map);
+      service = map.places.PlacesService(map);
       service.nearbySearch(request, this.callback);
 
 
