@@ -133,7 +133,10 @@ export default {
       this.nearbyIsLoaded = false
     },
     findNearby() {
-      console.log("hello")
+      let asdf = new VueGoogleMaps.gmapApi
+
+    console.log(typeof asdf);
+
 
       let map;
       let service;
@@ -147,7 +150,7 @@ export default {
         type: this.nearbyFilterType
       };
 
-      service = map.places.PlacesService(map);
+      service = new VueGoogleMaps.gmapApi.places.PlacesService(map);
       service.nearbySearch(request, this.callback);
 
 
