@@ -125,25 +125,6 @@ export default {
       this.nearbyIsLoaded = false
     },
     findNearby() {
-      let asdf = new VueGoogleMaps.gmapApi
-
-    console.log(typeof asdf);
-
-
-      let map;
-      let service;
-      //let infowindow;
-
-      map = document.getElementById("map")
-
-      var request = {
-        location: this.coordinates, // map
-        radius: this.radius,
-        type: this.nearbyFilterType
-      };
-
-      service = new VueGoogleMaps.gmapApi.places.PlacesService(map);
-      service.nearbySearch(request, this.callback);
 
 
 
