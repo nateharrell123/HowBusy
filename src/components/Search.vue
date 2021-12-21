@@ -38,7 +38,7 @@
     </div>
   </div>
   
-    <!-- <div class="centeredRadiusSearch">
+    <!-- <div class="centeredRadiusSearch">     Old autocomplete
       <GMapAutocomplete
       style="width: 600px;"
       v-show="isSpecificSearch"
@@ -55,14 +55,6 @@
       v-if="specificIsLoaded"
       />
     </div>
-
-    <GMapMap
-    class="hide"
-    id = "map"
-      :center="{lat: this.coordinates.lat, lng: this.coordinates.lng}"
-      :zoom="7"
-      :disableDefaultUI="true"
-    />
 
     <div class="results">
       <ResultsTable
